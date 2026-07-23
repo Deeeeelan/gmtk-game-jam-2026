@@ -1,3 +1,16 @@
 [gd_scene format=3 uid="uid://cfce8rl3gvf5u"]
 
+[ext_resource type="Script" uid="uid://dtnxmryvuac7n" path="res://scripts/game_manager.gd" id="1_yqjtg"]
+[ext_resource type="Script" uid="uid://e4al832a8ucu" path="res://scripts/game_loop_manager.gd" id="2_lnu2h"]
+
 [node name="Game" type="Node" unique_id=101121047]
+
+[node name="Node2D" type="Node2D" parent="." unique_id=1775230814]
+
+[node name="GameManager" type="Node" parent="." unique_id=729286049]
+unique_name_in_owner = true
+script = ExtResource("1_yqjtg")
+
+[node name="GameLoopManager" type="Node" parent="." unique_id=1551743415]
+unique_name_in_owner = true
+script = ExtResource("2_lnu2h")
