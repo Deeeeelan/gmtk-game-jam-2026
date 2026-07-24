@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b4i3o5ydoxatb"
-path="res://.godot/imported/9slice-window.png-ae9d29f11a85d5602b27d6106e2857bf.ctex"
+uid="uid://dbdojfxn6xli6"
+path="res://.godot/imported/email.png-7459ab5b9482c60772aab785a3c0abcc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/os-window/9slice-window.png"
-dest_files=["res://.godot/imported/9slice-window.png-ae9d29f11a85d5602b27d6106e2857bf.ctex"]
+source_file="res://assets/images/app_icons/email.png"
+dest_files=["res://.godot/imported/email.png-7459ab5b9482c60772aab785a3c0abcc.ctex"]
 
 [params]
 

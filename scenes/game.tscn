@@ -3,10 +3,10 @@
 [ext_resource type="Script" uid="uid://dtnxmryvuac7n" path="res://scripts/game_manager.gd" id="1_yqjtg"]
 [ext_resource type="Texture2D" uid="uid://x8s3v33dnavy" path="res://assets/images/desktop/taskbar.png" id="2_u5sy4"]
 [ext_resource type="Texture2D" uid="uid://bmf64qaw1ftmg" path="res://assets/images/icon.svg" id="2_yqjtg"]
-[ext_resource type="Texture2D" uid="uid://cmn27ifrauvil" path="res://assets/images/app-icons/word.png" id="4_gee14"]
-[ext_resource type="Texture2D" uid="uid://d3ljwj3vn4r3j" path="res://assets/images/os-window/9slice-topbar.png" id="5_0tnpc"]
-[ext_resource type="Texture2D" uid="uid://cvjc3l51x0i53" path="res://assets/images/os-window/topbar-close.png" id="6_vtaks"]
-[ext_resource type="Texture2D" uid="uid://b4i3o5ydoxatb" path="res://assets/images/os-window/9slice-window.png" id="7_kvpfn"]
+[ext_resource type="Texture2D" uid="uid://cmn27ifrauvil" path="res://assets/images/app_icons/word.png" id="4_gee14"]
+[ext_resource type="Texture2D" uid="uid://d3ljwj3vn4r3j" path="res://assets/images/os_window/9slice_topbar.png" id="5_0tnpc"]
+[ext_resource type="Texture2D" uid="uid://cvjc3l51x0i53" path="res://assets/images/os_window/topbar_close.png" id="6_vtaks"]
+[ext_resource type="Texture2D" uid="uid://b4i3o5ydoxatb" path="res://assets/images/os_window/9slice_window.png" id="7_kvpfn"]
 
 [node name="Game" type="Node" unique_id=101121047]
 
@@ -109,8 +109,8 @@ layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.165
 anchor_bottom = 0.892
-offset_right = 8.0
-offset_bottom = 12.799988
+offset_right = 24.0
+offset_bottom = -379.2
 theme_override_constants/margin_left = 8
 theme_override_constants/margin_top = 8
 
