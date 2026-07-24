@@ -18,10 +18,11 @@ config/icon="res://assets/images/icon.svg"
 [autoload]
 
 Minigames="*uid://h2x38lstm06n"
-WindowFactory="*uid://8w0jmelvcovm"
 
 [display]
 
+window/size/viewport_width=800
+window/size/viewport_height=600
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 
