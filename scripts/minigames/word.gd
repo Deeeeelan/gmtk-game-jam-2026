@@ -9,7 +9,7 @@ func _input(event: InputEvent) -> void:
 	pass
 
 func play():
-	var cur_text = TEXTS[randi_range(0,len(TEXTS))]
+	var cur_text = TEXTS[randi_range(0,len(TEXTS) - 1)]
 	$Center/Hide.text = cur_text
 	$Center/Input.text = ""
 	$Center/Input.text_changed.connect(func():
