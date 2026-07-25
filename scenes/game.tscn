@@ -168,9 +168,9 @@ mouse_filter = 2
 
 [node name="Window" type="Control" parent="CanvasLayer/Control/Windows" unique_id=2131702767]
 anchors_preset = 0
-offset_left = 243.0
-offset_top = 298.0
-offset_right = 481.0
+offset_left = 201.0
+offset_top = 64.0
+offset_right = 769.0
 offset_bottom = 483.0
 
 [node name="Top" type="NinePatchRect" parent="CanvasLayer/Control/Windows/Window" unique_id=1339523606]
@@ -211,6 +211,17 @@ layout_mode = 2
 texture_normal = ExtResource("6_vtaks")
 stretch_mode = 0
 
+[node name="Title" type="Label" parent="CanvasLayer/Control/Windows/Window/Top" unique_id=1254826873]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Lorem Ipsum..."
+vertical_alignment = 1
+
 [node name="Body" type="NinePatchRect" parent="CanvasLayer/Control/Windows/Window" unique_id=2041510522]
 layout_mode = 1
 anchors_preset = -1
@@ -224,3 +235,19 @@ patch_margin_left = 5
 patch_margin_top = 5
 patch_margin_right = 5
 patch_margin_bottom = 5
+
+[node name="MG_Word" type="Control" parent="CanvasLayer/Control/Windows/Window/Body" unique_id=1247462994]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/Windows/Window/Body" unique_id=1864992959]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
