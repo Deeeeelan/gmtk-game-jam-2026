@@ -17,6 +17,7 @@ func play():
 			$Center/Input.add_theme_color_override("font_color", Color(0.0, 0.4, 0.0, 1.0))
 			print('matched')
 		else:
+			# Are all current chars correct?
 			if $Center/Input.text != cur_text.substr(0, len($Center/Input.text)):
 				$Center/Input.add_theme_color_override("font_color", Color(0.396, 0.0, 0.0, 1.0))
 			else:

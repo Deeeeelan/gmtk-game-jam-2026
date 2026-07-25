@@ -2,10 +2,12 @@ extends Node
 
 var score: int = 0
 var total_games: int = 0
+
 var game_streak: int = 0
 var highest_streak: int = 0
-var speed_mult: int = 100
-var lives: int = 3
+
+var speed_mult: int = 100 # speed mult increasing = decreases deadline time
+var lives: int = 1
 
 var currentGame: Node
 var currentWindow: Variant
@@ -33,6 +35,7 @@ func lose() -> void:
 	print("lose")
 	#TODO
 
+## @deprecated: Restructuring the warioware-like format so that multiple games open at once, one main deadline
 func game_loop() -> void:
 	while true:
 		var game_id = randi_range(0, len(Minigames.games))

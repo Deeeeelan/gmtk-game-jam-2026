@@ -6,6 +6,7 @@ var can_close: bool = true
 var can_resize: bool = true
 var can_move: bool = true
 
+# Dragging is determined by moving a ui to the mouse with the offset where the mouse first clicked
 var dragging = false
 var offset_drag: Vector2 = Vector2.ZERO
 
@@ -13,6 +14,7 @@ var offset_drag: Vector2 = Vector2.ZERO
 func close():
 	queue_free()
 
+# set variables and anything that may be changed at runtime as _ready() may start early
 func initialize(cn: Control):
 	content = cn
 	$Top/Title.text = title
