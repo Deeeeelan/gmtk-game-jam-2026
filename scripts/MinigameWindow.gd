@@ -12,7 +12,7 @@ var offset_drag: Vector2 = Vector2.ZERO
 
 
 func close():
-	queue_free()
+	visible = false
 
 # set variables and anything that may be changed at runtime as _ready() may start early
 func initialize(cn: Control):
