@@ -1,8 +1,7 @@
 extends Control
-class_name MinigameWindow
 
 var title: String
-var content: Node2D
+var content: Control
 var can_close: bool = true
 var can_resize: bool = true
 var can_move: bool = true
@@ -10,13 +9,14 @@ var can_move: bool = true
 var dragging = false
 var offset_drag: Vector2 = Vector2.ZERO
 
+
 func close():
 	queue_free()
 
-func initialize(cn: Node2D):
+func initialize(cn: Control):
 	content = cn
-	#TODO: instantiate window
-	#TODO: set up handlers for dragging and resizing
+	$Top/Title.text = title
+	$Body.add_child(cn)
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
