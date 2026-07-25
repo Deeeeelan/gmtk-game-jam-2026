@@ -123,18 +123,18 @@ theme_override_constants/margin_top = 8
 [node name="AppList" type="VBoxContainer" parent="CanvasLayer/Desktop/DesktopApps/MarginContainer" unique_id=1290505825]
 layout_mode = 2
 
-[node name="App" type="MarginContainer" parent="CanvasLayer/Desktop/DesktopApps/MarginContainer/AppList" unique_id=620243146]
+[node name="WordApp" type="MarginContainer" parent="CanvasLayer/Desktop/DesktopApps/MarginContainer/AppList" unique_id=620243146]
 layout_mode = 2
 theme_override_constants/margin_left = 8
 theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="List" type="VBoxContainer" parent="CanvasLayer/Desktop/DesktopApps/MarginContainer/AppList/App" unique_id=90371095]
+[node name="List" type="VBoxContainer" parent="CanvasLayer/Desktop/DesktopApps/MarginContainer/AppList/WordApp" unique_id=90371095]
 layout_mode = 2
 mouse_filter = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Desktop/DesktopApps/MarginContainer/AppList/App/List" unique_id=514187680]
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Desktop/DesktopApps/MarginContainer/AppList/WordApp/List" unique_id=514187680]
 layout_mode = 2
 mouse_filter = 2
 theme_override_constants/margin_left = 8
@@ -142,13 +142,13 @@ theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="Icon" type="TextureRect" parent="CanvasLayer/Desktop/DesktopApps/MarginContainer/AppList/App/List/MarginContainer" unique_id=1192499370]
+[node name="Icon" type="TextureRect" parent="CanvasLayer/Desktop/DesktopApps/MarginContainer/AppList/WordApp/List/MarginContainer" unique_id=1192499370]
 layout_mode = 2
 mouse_filter = 2
 texture = ExtResource("4_gee14")
 stretch_mode = 5
 
-[node name="Title" type="Label" parent="CanvasLayer/Desktop/DesktopApps/MarginContainer/AppList/App/List" unique_id=50151332]
+[node name="Title" type="Label" parent="CanvasLayer/Desktop/DesktopApps/MarginContainer/AppList/WordApp/List" unique_id=50151332]
 custom_minimum_size = Vector2(64, 32)
 custom_maximum_size = Vector2(128, 128)
 layout_mode = 2
@@ -156,7 +156,7 @@ text = "Lorem Ipsum..."
 horizontal_alignment = 1
 autowrap_mode = 2
 
-[node name="Button" type="Button" parent="CanvasLayer/Desktop/DesktopApps/MarginContainer/AppList/App" unique_id=1747971174]
+[node name="Button" type="Button" parent="CanvasLayer/Desktop/DesktopApps/MarginContainer/AppList/WordApp" unique_id=1747971174]
 z_index = 1
 layout_mode = 2
 mouse_filter = 1
@@ -164,6 +164,48 @@ flat = true
 script = ExtResource("5_u5sy4")
 game_path = "res://assets/minigames/mg_word.tscn"
 game_name = "Word"
+
+[node name="SignApp" type="MarginContainer" parent="CanvasLayer/Desktop/DesktopApps/MarginContainer/AppList" unique_id=193374164]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="List" type="VBoxContainer" parent="CanvasLayer/Desktop/DesktopApps/MarginContainer/AppList/SignApp" unique_id=496063399]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Desktop/DesktopApps/MarginContainer/AppList/SignApp/List" unique_id=1771429853]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="Icon" type="TextureRect" parent="CanvasLayer/Desktop/DesktopApps/MarginContainer/AppList/SignApp/List/MarginContainer" unique_id=1241914779]
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("4_gee14")
+stretch_mode = 5
+
+[node name="Title" type="Label" parent="CanvasLayer/Desktop/DesktopApps/MarginContainer/AppList/SignApp/List" unique_id=581200332]
+custom_minimum_size = Vector2(64, 32)
+custom_maximum_size = Vector2(128, 128)
+layout_mode = 2
+text = "Sign Docs"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Button" type="Button" parent="CanvasLayer/Desktop/DesktopApps/MarginContainer/AppList/SignApp" unique_id=443846468]
+z_index = 1
+layout_mode = 2
+mouse_filter = 1
+flat = true
+script = ExtResource("5_u5sy4")
+game_path = "res://assets/minigames/mg_sign.tscn"
+game_name = "Sign"
 
 [node name="Windows" type="Control" parent="CanvasLayer/Desktop" unique_id=846701356]
 unique_name_in_owner = true
