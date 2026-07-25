@@ -18,7 +18,7 @@ script = ExtResource("1_yqjtg")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=749428670]
 
-[node name="Control" type="Control" parent="CanvasLayer" unique_id=1661590345]
+[node name="Desktop" type="Control" parent="CanvasLayer" unique_id=1661590345]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -26,7 +26,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="BackupBG" type="ColorRect" parent="CanvasLayer/Control" unique_id=832602020]
+[node name="BackupBG" type="ColorRect" parent="CanvasLayer/Desktop" unique_id=832602020]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -35,7 +35,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0.5019608, 0.5058824, 1)
 
-[node name="TEMPTaskbar" type="TextureRect" parent="CanvasLayer/Control" unique_id=1207374543]
+[node name="TEMPTaskbar" type="TextureRect" parent="CanvasLayer/Desktop" unique_id=1207374543]
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 1.0
@@ -46,7 +46,7 @@ grow_horizontal = 2
 grow_vertical = 0
 texture = ExtResource("2_u5sy4")
 
-[node name="Transition" type="Control" parent="CanvasLayer/Control" unique_id=843589496]
+[node name="Transition" type="Control" parent="CanvasLayer/Desktop" unique_id=843589496]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -55,7 +55,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control/Transition" unique_id=1575009528]
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Desktop/Transition" unique_id=1575009528]
 visible = false
 layout_mode = 1
 anchors_preset = -1
@@ -68,43 +68,43 @@ grow_vertical = 2
 mouse_filter = 2
 alignment = 1
 
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Control/Transition/HBoxContainer" unique_id=218899467]
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Desktop/Transition/HBoxContainer" unique_id=218899467]
 layout_mode = 2
 mouse_filter = 2
 theme_override_constants/margin_left = 8
 theme_override_constants/margin_right = 8
 
-[node name="Life" type="TextureRect" parent="CanvasLayer/Control/Transition/HBoxContainer/MarginContainer" unique_id=1250852732]
+[node name="Life" type="TextureRect" parent="CanvasLayer/Desktop/Transition/HBoxContainer/MarginContainer" unique_id=1250852732]
 layout_mode = 2
 mouse_filter = 2
 texture = ExtResource("2_yqjtg")
 stretch_mode = 5
 
-[node name="MarginContainer2" type="MarginContainer" parent="CanvasLayer/Control/Transition/HBoxContainer" unique_id=1235823027]
+[node name="MarginContainer2" type="MarginContainer" parent="CanvasLayer/Desktop/Transition/HBoxContainer" unique_id=1235823027]
 layout_mode = 2
 mouse_filter = 2
 theme_override_constants/margin_left = 8
 theme_override_constants/margin_right = 8
 
-[node name="Life" type="TextureRect" parent="CanvasLayer/Control/Transition/HBoxContainer/MarginContainer2" unique_id=1807586557]
+[node name="Life" type="TextureRect" parent="CanvasLayer/Desktop/Transition/HBoxContainer/MarginContainer2" unique_id=1807586557]
 layout_mode = 2
 mouse_filter = 2
 texture = ExtResource("2_yqjtg")
 stretch_mode = 5
 
-[node name="MarginContainer3" type="MarginContainer" parent="CanvasLayer/Control/Transition/HBoxContainer" unique_id=219707825]
+[node name="MarginContainer3" type="MarginContainer" parent="CanvasLayer/Desktop/Transition/HBoxContainer" unique_id=219707825]
 layout_mode = 2
 mouse_filter = 2
 theme_override_constants/margin_left = 8
 theme_override_constants/margin_right = 8
 
-[node name="Life" type="TextureRect" parent="CanvasLayer/Control/Transition/HBoxContainer/MarginContainer3" unique_id=991656882]
+[node name="Life" type="TextureRect" parent="CanvasLayer/Desktop/Transition/HBoxContainer/MarginContainer3" unique_id=991656882]
 layout_mode = 2
 mouse_filter = 2
 texture = ExtResource("2_yqjtg")
 stretch_mode = 5
 
-[node name="DesktopApps" type="Control" parent="CanvasLayer/Control" unique_id=1636546288]
+[node name="DesktopApps" type="Control" parent="CanvasLayer/Desktop" unique_id=1636546288]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -112,7 +112,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Control/DesktopApps" unique_id=332027078]
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Desktop/DesktopApps" unique_id=332027078]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.165
@@ -122,21 +122,21 @@ offset_bottom = -379.2
 theme_override_constants/margin_left = 8
 theme_override_constants/margin_top = 8
 
-[node name="AppList" type="VBoxContainer" parent="CanvasLayer/Control/DesktopApps/MarginContainer" unique_id=1290505825]
+[node name="AppList" type="VBoxContainer" parent="CanvasLayer/Desktop/DesktopApps/MarginContainer" unique_id=1290505825]
 layout_mode = 2
 
-[node name="App" type="MarginContainer" parent="CanvasLayer/Control/DesktopApps/MarginContainer/AppList" unique_id=620243146]
+[node name="App" type="MarginContainer" parent="CanvasLayer/Desktop/DesktopApps/MarginContainer/AppList" unique_id=620243146]
 layout_mode = 2
 theme_override_constants/margin_left = 8
 theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="List" type="VBoxContainer" parent="CanvasLayer/Control/DesktopApps/MarginContainer/AppList/App" unique_id=90371095]
+[node name="List" type="VBoxContainer" parent="CanvasLayer/Desktop/DesktopApps/MarginContainer/AppList/App" unique_id=90371095]
 layout_mode = 2
 mouse_filter = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Control/DesktopApps/MarginContainer/AppList/App/List" unique_id=514187680]
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Desktop/DesktopApps/MarginContainer/AppList/App/List" unique_id=514187680]
 layout_mode = 2
 mouse_filter = 2
 theme_override_constants/margin_left = 8
@@ -144,13 +144,13 @@ theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="Icon" type="TextureRect" parent="CanvasLayer/Control/DesktopApps/MarginContainer/AppList/App/List/MarginContainer" unique_id=1192499370]
+[node name="Icon" type="TextureRect" parent="CanvasLayer/Desktop/DesktopApps/MarginContainer/AppList/App/List/MarginContainer" unique_id=1192499370]
 layout_mode = 2
 mouse_filter = 2
 texture = ExtResource("4_gee14")
 stretch_mode = 5
 
-[node name="Title" type="Label" parent="CanvasLayer/Control/DesktopApps/MarginContainer/AppList/App/List" unique_id=50151332]
+[node name="Title" type="Label" parent="CanvasLayer/Desktop/DesktopApps/MarginContainer/AppList/App/List" unique_id=50151332]
 custom_minimum_size = Vector2(64, 32)
 custom_maximum_size = Vector2(128, 128)
 layout_mode = 2
@@ -158,7 +158,7 @@ text = "Lorem Ipsum..."
 horizontal_alignment = 1
 autowrap_mode = 2
 
-[node name="Button" type="Button" parent="CanvasLayer/Control/DesktopApps/MarginContainer/AppList/App" unique_id=1747971174]
+[node name="Button" type="Button" parent="CanvasLayer/Desktop/DesktopApps/MarginContainer/AppList/App" unique_id=1747971174]
 z_index = 1
 layout_mode = 2
 mouse_filter = 1
@@ -167,7 +167,7 @@ script = ExtResource("5_u5sy4")
 game_path = "res://assets/minigames/mg_word.tscn"
 game_name = "Word"
 
-[node name="Windows" type="Control" parent="CanvasLayer/Control" unique_id=846701356]
+[node name="Windows" type="Control" parent="CanvasLayer/Desktop" unique_id=846701356]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 15
@@ -177,14 +177,14 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="MinigameWindow" parent="CanvasLayer/Control/Windows" unique_id=284367759 instance=ExtResource("5_p57ef")]
+[node name="MinigameWindow" parent="CanvasLayer/Desktop/Windows" unique_id=284367759 instance=ExtResource("5_p57ef")]
 layout_mode = 0
 offset_left = 0.0
 offset_top = 0.0
 offset_right = 568.0
 offset_bottom = 419.0
 
-[node name="MG_Word" parent="CanvasLayer/Control/Windows/MinigameWindow/Body" parent_id_path=PackedInt32Array(284367759, 1846786911) index="0" unique_id=622303260 instance=ExtResource("6_p57ef")]
+[node name="MG_Word" parent="CanvasLayer/Desktop/Windows/MinigameWindow/Body" parent_id_path=PackedInt32Array(284367759, 1846786911) index="0" unique_id=622303260 instance=ExtResource("6_p57ef")]
 layout_mode = 1
 
-[editable path="CanvasLayer/Control/Windows/MinigameWindow"]
+[editable path="CanvasLayer/Desktop/Windows/MinigameWindow"]

@@ -12,16 +12,16 @@ var lives: int = 1
 var currentGame: Node
 var currentWindow: Variant
 
-func playGame(game: String) -> bool:
-	print("playing: ", game)
-	if Minigames.games.has(game):
-		print("data: ", Minigames.games[game])
-		var game_data = Minigames.games[game]
-		var game_scene = load(game_data.node).instantiate()
-		
-	else:
-		push_warning("no game data!")
-	return false
+#func playGame(game: String) -> bool: Depracated
+	#print("playing: ", game)
+	#if Minigames.games.has(game):
+		#print("data: ", Minigames.games[game])
+		#var game_data = Minigames.games[game]
+		#var game_scene = load(game_data.node).instantiate()
+		#
+	#else:
+		#push_warning("no game data!")
+	#return false
 
 func speedUp() -> void:
 	speed_mult = min(500, speed_mult + 50)
@@ -38,9 +38,9 @@ func lose() -> void:
 ## @deprecated: Restructuring the warioware-like format so that multiple games open at once, one main deadline
 func game_loop() -> void:
 	while true:
-		var game_id = randi_range(0, len(Minigames.games))
-		var game = Minigames.games[game_id]
-		var outcome = await playGame(game_id)
+		#var game_id = randi_range(0, len(Minigames.games))
+		#var game = Minigames.games[game_id]
+		var outcome #= await playGame(game_id)
 		if outcome:
 			# WIN
 			total_games += 1
