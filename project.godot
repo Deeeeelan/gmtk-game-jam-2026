@@ -23,8 +23,7 @@ Minigames="*uid://h2x38lstm06n"
 
 window/size/viewport_width=800
 window/size/viewport_height=600
-window/stretch/mode="canvas_items"
-window/stretch/aspect="expand"
+window/stretch/mode="viewport"
 
 [editor_plugins]
 
