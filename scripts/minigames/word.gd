@@ -1,7 +1,9 @@
 extends Control
 
+@onready var game_manager: Node = GameManager
+
 const TEXTS = [
-	"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec dui quam, vestibulum sit amet lacus non, iaculis imperdiet sem.",
+	"debug",
 	"Funny text.",
 ]
 
@@ -15,6 +17,7 @@ func play():
 	$Center/Input.text_changed.connect(func():
 		if $Center/Input.text == cur_text:
 			$Center/Input.add_theme_color_override("font_color", Color(0.0, 0.4, 0.0, 1.0))
+			game_manager.gameWin()
 			print('matched')
 		else:
 			# Are all current chars correct?
@@ -23,7 +26,6 @@ func play():
 			else:
 				$Center/Input.add_theme_color_override("font_color", Color(0.0, 0.0, 0.0, 1.0))
 	)
-	
 	
 func _ready() -> void:
 	play()
