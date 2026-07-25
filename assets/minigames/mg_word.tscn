@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bm3c1sofck16"]
 
-[ext_resource type="Script" uid="uid://bkyam1b1yxprv" path="res://scripts/minigames/word.gd" id="1_xq22r"]
+[ext_resource type="Script" uid="uid://bkyam1b1yxprv" path="res://scripts/minigames/mg_word.gd" id="1_xq22r"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6sj1v"]
 
