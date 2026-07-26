@@ -1,23 +1,23 @@
 extends Node
 
-@onready var countdown_text = %Countdown
+@onready var countdown_text = %Clock
 
 const APP = preload("res://assets/nodes/app.tscn")
 
 const MAX_GAMES: int = 1
 
+func start():
+	pass
 
 func game_loop() -> void:
-	countdown_text.visible = true
 	$"../Countdown".start()
 	$"../Countdown".timeout.connect(func():
 		if GameManager.curr_time == 0:
 			GameManager.lose()
 		else:
 			GameManager.curr_time -= 1
-			countdown_text.text = "Deadline:\n" + str(GameManager.curr_time)
+			countdown_text.text = str(GameManager.curr_time)
 		var clock_state: float = float(GameManager.curr_time) / float(GameManager.max_time)
-		%Clock.text = "9:00" + ("am" if clock_state < 0.5 else "pm") #TODO
 	)
 	while true:
 		GameManager.curr_time = GameManager.max_time
