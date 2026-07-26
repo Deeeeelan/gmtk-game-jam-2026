@@ -3,6 +3,9 @@ extends Node
 @onready var countdown_text = %Clock
 @onready var fade = %Fade
 @onready var promotion = %Promotion
+@onready var fired = %Fired
+
+var lost = false
 const APP = preload("res://assets/nodes/app.tscn")
 
 var max_games: int = 1
@@ -39,7 +42,17 @@ func promote():
 	var tween2 = get_tree().create_tween()
 	tween2.tween_property(promotion, "modulate", Color(1.0, 1.0, 1.0, 0.0), 1.0)
 	tween2.play()
-	
+
+func lose():
+	if not lost:
+		lost = true
+		fired.get_node("Label").text = "You've been fired!\nRank:\n" + RANKS[rank]
+		fired.modulate = Color(0.0, 0.0, 0.0, 0.0)
+		var tween = get_tree().create_tween()
+		tween.tween_property(fired, "modulate", Color(1.0, 1.0, 1.0, 1.0), 1.0)
+		tween.play()
+		await get_tree().create_timer(8).timeout
+		get_tree().quit()
 
 func start():
 	%BGM.volume_db = -80.0
@@ -62,7 +75,7 @@ func game_loop() -> void:
 	$"../Countdown".start()
 	$"../Countdown".timeout.connect(func():
 		if GameManager.curr_time == 0:
-			GameManager.lose()
+			lose()
 		else:
 			GameManager.curr_time -= 1
 			countdown_text.text = str(GameManager.curr_time)
