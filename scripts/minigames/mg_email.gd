@@ -48,7 +48,13 @@ var responses: Array[Dictionary] = [ #TODO: Write responses
 		3: "Hi Maple, I just like making meetings for fun.",
 		"Correct": 2
 	},
-		{
+	{
+		3: "Hey Mr. Manager. Sorry, but I am busy.",
+		2: "Of Course!",
+		1: "...",
+		"Correct": 2
+	},
+	{
 		3: "Hey Denson. I agree that staples are a crucial element in a successful office. I will create a new order ASAP.",
 		2: "Hey Denson. I agree staples are very useful for us because we can like staple someone's shirt to itself while they sleep.",
 		1: "Hello Denson, I think we can all agree that staples are tasty.",
@@ -59,7 +65,8 @@ var responses: Array[Dictionary] = [ #TODO: Write responses
 		2: "Hi Garret. This job position would be great to get you out of debt.",
 		3: "Yo Garret! Thats kinda unfortunate man...",
 		"Correct": 1
-	}]
+	}
+]
 	
 func _ready():
 	var randid = randi_range(0, 3)
@@ -82,7 +89,7 @@ func _ready():
 				else:
 					get_tree().get_first_node_in_group("wrongsfx").play()
 					but.add_theme_color_override("font_color", Color(0.569, 0.0, 0.0, 1.0))
-				await get_tree().create_timer(4).timeout
+				await get_tree().create_timer(2).timeout
 				cooldown = false
 				
 		)
