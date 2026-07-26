@@ -33,6 +33,16 @@ var emails: Array[Dictionary] = [ #TODO: Write the emails
 		"Subject": "From: Garret Kim\nSubject: What am I supposed to do around here?", 
 		"Body": 'Why does it say on my job details that I am a Bagel boy? I graduated from Harvard. I went into student debt. I have a Masters Degree in Neuroscience. Why am I labeled nothing more than a child who brings the "workers" a morning snack?',
 	},
+	{
+		"Title": "You are a perfect fit for our company",
+		"Subject": "From: Evelyn Marione\nSubject: You are a perfect fit for our company", 
+		"Body": 'Hello, we have reviewed your application and resume extensively, and took your interview into consideration. We have deemed you a perfect fit for our company and invite you to join us.',
+	},
+	{
+		"Title": "Filling in for a week",
+		"Subject": "From: James Stone\nSubject: Filling in for a week", 
+		"Body": "I have gotten severely injured from rock climbing. I need you to stand in for me for the next two week. I'll repay the favor sometime soon.",
+	},
 ]
 
 var responses: Array[Dictionary] = [ #TODO: Write responses
@@ -65,6 +75,18 @@ var responses: Array[Dictionary] = [ #TODO: Write responses
 		2: "Hi Garret. This job position would be great to get you out of debt.",
 		3: "Yo Garret! Thats kinda unfortunate man...",
 		"Correct": 1
+	},
+	{
+		1: "How did you find my corporate email",
+		2: "Sorry, I am unable to accept your position at this time. I have found myself in a better position.",
+		3: "Yes, I will gladly accept this position because my current position sucks.",
+		"Correct": 2
+	},
+	{
+		1: "I apologize James, but I am unable to fill in for your position at this time.",
+		2: "James, how did you do that? I'm not doing that.",
+		3: "Of course, James. I will gladly fill in for you. You don't need to worry about it too much.",
+		"Correct": 3
 	}
 ]
 	
