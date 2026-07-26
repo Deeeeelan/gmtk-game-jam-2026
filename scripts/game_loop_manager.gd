@@ -46,6 +46,8 @@ func promote():
 func lose():
 	if not lost:
 		lost = true
+		%BGM.stop()
+		%SFX_wrong.play()
 		fired.get_node("Label").text = "You've been fired!\nRank:\n" + ("Nothing" if rank == -1 else RANKS[rank])
 		fired.modulate = Color(0.0, 0.0, 0.0, 0.0)
 		var tween = get_tree().create_tween()

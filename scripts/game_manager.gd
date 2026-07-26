@@ -37,6 +37,7 @@ func shutdown():
 
 func gameWin() -> void:
 	print("Game Completed")
+	get_tree().get_first_node_in_group("winsfx").play()
 	score += 1
 	total_games += 1
 	cur_games += 1
