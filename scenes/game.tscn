@@ -352,8 +352,18 @@ Subject: your mother"
 
 [node name="MinigameWindow2" parent="CanvasLayer/Desktop/Windows" unique_id=154404227 instance=ExtResource("5_p57ef")]
 layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 568.0
+offset_bottom = 419.0
 
-[node name="MG_Sign" parent="CanvasLayer/Desktop/Windows/MinigameWindow2" unique_id=1222474499 instance=ExtResource("8_gee14")]
+[node name="MG_Sign" parent="CanvasLayer/Desktop/Windows/MinigameWindow2/Body" parent_id_path=PackedInt32Array(154404227, 1846786911) index="0" unique_id=1222474499 instance=ExtResource("8_gee14")]
 layout_mode = 1
+anchors_preset = -1
+
+[node name="SFX" type="AudioStreamPlayer" parent="." unique_id=490466500]
+
+[node name="BGM" type="AudioStreamPlayer" parent="." unique_id=281626738]
 
 [editable path="CanvasLayer/Desktop/Windows/MinigameWindow"]
+[editable path="CanvasLayer/Desktop/Windows/MinigameWindow2"]
