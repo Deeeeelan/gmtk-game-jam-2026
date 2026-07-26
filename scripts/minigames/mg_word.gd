@@ -4,11 +4,10 @@ extends Control
 
 const TEXTS = [
 	"debug",
-	"Funny text.",
-]
+	"Funny text.",]
 
-func _input(event: InputEvent) -> void:
-	pass
+func _ready() -> void:
+	play()
 
 func play():
 	var cur_text = TEXTS[randi_range(0,len(TEXTS) - 1)]
@@ -26,6 +25,6 @@ func play():
 			else:
 				$Center/Input.add_theme_color_override("font_color", Color(0.0, 0.0, 0.0, 1.0))
 	)
-	
-func _ready() -> void:
-	play()
+
+func _input(event: InputEvent) -> void:
+	pass
