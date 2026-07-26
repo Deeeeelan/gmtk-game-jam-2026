@@ -8,9 +8,13 @@ const TEXTS = [
 	"The quick brown fox jumped over the nasty dog. While that's true, I don't really like dogs. Personally, I'm a cat person.",
 	"After one o' clock, I clock out. But I hate clocking out, so I use my magic stopwatch to stop time and work for eternity.",
 	"I think everyone should study me. My button fastening business is bound to succeed, giving us money that can stack to SATURN!",
-	"Work emails are lame. Working's lame. Why do I work? I don't know. I'm just an unpaid intern.",
-	"Lorem Ipsum... salt?",
-	"Sometimes, I just feel like working. There's just this strange urge, but it's probably just the money drawing me in."
+	"Work emails are lame. Workings lame. Why do I work? I don't know I'm an unpaid intern.",
+	"Lorem Ipsum...",
+	"Sometime I just feel like working. There's just this strange urge, but it's probably just money pulling me in.",
+	'All I do everyday is work. "I need you an hour earlier tomorrow" this, "Deadline in two weeks" that, ugh.',
+	"Being good at my job rewards me with doing more jobs! This is amazing.",
+	"Considering my efforts at this company, I feel like I deserve a raise. Actually this draft sucks.",
+	"Everytime I look at the clock, it goes backwards. Am I going insane? Should I request time off?",
 ]
 
 func _ready() -> void:
