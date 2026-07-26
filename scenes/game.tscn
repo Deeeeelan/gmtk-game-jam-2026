@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dxs7j6fe6vjl8" path="res://assets/nodes/minigame_window.tscn" id="5_p57ef"]
 [ext_resource type="Texture2D" uid="uid://d350268cmyjtj" path="res://assets/images/slide_content/speed_up.png" id="5_u5sy4"]
 [ext_resource type="AudioStream" uid="uid://cf1br5pxi1m8p" path="res://assets/audio/speed up.ogg" id="6_gee14"]
+[ext_resource type="AudioStream" uid="uid://dfit6byv21t5o" path="res://assets/audio/minigame lose.ogg" id="7_0tnpc"]
 [ext_resource type="Script" uid="uid://d05bssflabn18" path="res://scripts/game_loop_manager.gd" id="8_0tnpc"]
 [ext_resource type="AudioStream" uid="uid://m14mmu5rmdq" path="res://assets/audio/music_track.mp3" id="9_0tnpc"]
 
@@ -246,6 +247,11 @@ stretch_mode = 4
 [node name="SFX" type="AudioStreamPlayer" parent="." unique_id=490466500]
 unique_name_in_owner = true
 stream = ExtResource("6_gee14")
+bus = &"SFX"
+
+[node name="SFX_shutdown" type="AudioStreamPlayer" parent="." unique_id=1025988510]
+unique_name_in_owner = true
+stream = ExtResource("7_0tnpc")
 bus = &"SFX"
 
 [node name="BGM" type="AudioStreamPlayer" parent="." unique_id=281626738]
