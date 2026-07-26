@@ -1,13 +1,46 @@
 extends Node
 
 @onready var countdown_text = %Clock
-
+@onready var fade = %Fade
+@onready var promotion = %Promotion
 const APP = preload("res://assets/nodes/app.tscn")
 
 const MAX_GAMES: int = 1
+const RANKS = [
+	"Unpaid Intern",
+	"Senior Intern",
+	"Junior Janitor",
+	"Toilet Lid Boy",
+	"Pencil Sharpening Boy",
+	"Coffee Boy",
+	"Bagel Boy",
+	"Senior Janitor",
+	"Trainee",
+	"Employee",
+	"Accountant",
+	"Junior Manager",
+	"Senior Manager",
+	"CEO",
+]
+
+func promote():
+	promotion.modulate = Color(0.0, 0.0, 0.0, 0.0)
+	var tween = get_tree().create_tween()
+	tween.tween_property(promotion, "modulate", Color(1.0, 1.0, 1.0, 1.0), 1.0)
+	tween.play()
+	
+	await tween.finished
+	
 
 func start():
-	pass
+	fade.color = Color(0.0, 0.0, 0.0, 1.0)
+	var tween = get_tree().create_tween()
+	tween.tween_property(fade, "color", Color(0.0, 0.0, 0.0, 0.0), 1.0)
+	tween.play()
+	
+	await tween.finished
+	game_loop()
+	
 
 func game_loop() -> void:
 	$"../Countdown".start()
@@ -33,6 +66,7 @@ func game_loop() -> void:
 		
 		while GameManager.cur_games < MAX_GAMES: await get_tree().create_timer(0.5).timeout
 		print("NEXT")
+		promote()
 		GameManager.cur_games = 0
 		GameManager.max_time = max(5, floori(GameManager.max_time * .75))
 		
@@ -42,4 +76,4 @@ func game_loop() -> void:
 			n.queue_free()
 		
 func _ready() -> void:
-	game_loop()
+	start()

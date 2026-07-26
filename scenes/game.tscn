@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://x8s3v33dnavy" path="res://assets/images/desktop/taskbar.png" id="2_u5sy4"]
 [ext_resource type="Texture2D" uid="uid://bmf64qaw1ftmg" path="res://assets/images/icon.svg" id="2_yqjtg"]
 [ext_resource type="PackedScene" uid="uid://dxs7j6fe6vjl8" path="res://assets/nodes/minigame_window.tscn" id="5_p57ef"]
+[ext_resource type="Texture2D" uid="uid://d350268cmyjtj" path="res://assets/images/slide_content/speed_up.png" id="5_u5sy4"]
 [ext_resource type="Script" uid="uid://d05bssflabn18" path="res://scripts/game_loop_manager.gd" id="8_0tnpc"]
 [ext_resource type="AudioStream" uid="uid://m14mmu5rmdq" path="res://assets/audio/music_track.mp3" id="9_0tnpc"]
 
@@ -194,6 +195,49 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 color = Color(0, 0, 0, 0)
+
+[node name="Promotion" type="ColorRect" parent="CanvasLayer/Desktop" unique_id=1520647729]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="CanvasLayer/Desktop/Promotion" unique_id=352526029]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 32
+text = "Congrats!
+You've been promoted to:
+Senior Janitor"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Desktop/Promotion" unique_id=621125074]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -70.0
+offset_top = 200.0
+offset_right = 70.0
+offset_bottom = 341.99988
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -1.5707964
+texture = ExtResource("5_u5sy4")
+stretch_mode = 4
 
 [node name="SFX" type="AudioStreamPlayer" parent="." unique_id=490466500]
 
