@@ -40,20 +40,7 @@ func lose() -> void:
 	print("lose")
 	#TODO
 
-## @deprecated: Restructuring the warioware-like format so that multiple games open at once, one main deadline
-func game_loop() -> void:
-	# countdown_text.visible = true
-	$"../Countdown".start()
-	$"../Countdown".timeout.connect(func():
-		curr_time -= 1
-		$"../Countdown".text = "Deadline:\n" + str(curr_time)
-	)
-	while true:
-		curr_time = max_time
-		var game_id = randi_range(0, len(GAMES))
-		var game = GAMES[game_id]
-		
-		max_time = max(5, floori(max_time * .75))
+ime = max(5, floori(max_time * .75))
 		
 	
 func _ready() -> void:
