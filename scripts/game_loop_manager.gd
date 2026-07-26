@@ -102,7 +102,7 @@ func game_loop() -> void:
 		if GameManager.total_games % 3 == 0 and GameManager.total_games >= 3 and max_games < 4:
 			max_games += 1
 		GameManager.cur_games = 0
-		GameManager.max_time = max(5, floori(GameManager.max_time * .85))
+		GameManager.max_time = max(25, floori(GameManager.max_time * .92))
 		
 		for n in %AppList.get_children():
 			n.queue_free()
