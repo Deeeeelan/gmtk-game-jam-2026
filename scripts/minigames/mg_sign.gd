@@ -2,25 +2,27 @@ extends Control
 
 @onready var game_manager: Node = GameManager
 @onready var canvas: GridContainer = $Canvas
-@onready var item_list: ItemList = $Left/Page/ItemList
+@onready var doc_list: VBoxContainer = $Left/Page/DocList
+@onready var texture_rect: TextureRect = $TextureRect
 
 const DOC_INFO: Dictionary = {
 	1: [{
-			"loc": Vector2(385, 370), "size": Vector2(50, 14)}],
+			"loc": Vector2(450, 390), "size": Vector2(45, 13)}],
 	2: [{
-			"loc": Vector2(385, 370), "size": Vector2(10, 10)},
+			"loc": Vector2(450, 248), "size": Vector2(45, 13)},
 		{
-			"loc": Vector2(100, 100), "size": Vector2(15, 15)}],
+			"loc": Vector2(450, 390), "size": Vector2(45, 13)}],
 	3: [{
-			"loc": Vector2(), "size": Vector2()},
+			"loc": Vector2(), "size": Vector2(45, 13)},
 		{
-			"loc": Vector2(), "size": Vector2()},
+			"loc": Vector2(), "size": Vector2(45, 13)},
 		{
-			"loc": Vector2(), "size": Vector2()}]}
+			"loc": Vector2(), "size": Vector2(45, 13)}]}
 const DOCS = {
 	1: preload("res://assets/images/minigames/mg_draw_1.png"),
 	2: preload("res://assets/images/minigames/mg_draw_2.png"),
 	3: preload("res://assets/images/minigames/mg_draw_3.png")}
+const DOC_BUTTON = preload("res://assets/minigames/doc_button.tscn")
 
 var filled: Dictionary = {
 	1: true,
@@ -35,20 +37,31 @@ var doc_count: int = 3
 
 func _ready() -> void:
 	play()
+	createButtons()
+	switchDoc(1)
 
 func play() -> void:
 	while doc_count > 0:
 		var current_doc = 1#(randi() % 3) + 1
-		for i in DOC_INFO[current_doc]:
-			createDrawableArea(i["loc"], i["size"])
-		
 		
 		doc_count -= 1
 		break #debug
 
+func switchDoc(doc_num) -> void:
+	for node in canvases:
+		node.queue_free()
+	canvases.clear()
+	texture_rect.texture = DOCS[doc_num]
+	for area in DOC_INFO[doc_num]:
+		createDrawableArea(area["loc"], area["size"])
+
 func createButtons():
-	for i in range(doc_count):
-		item_list.add_item("Document " + String.num_int64(i + 1))
+	for i in range(doc_count + 1):
+		var butt = DOC_BUTTON.instantiate()
+		butt.modulate = Color()
+		butt.text = "Document " + String.num_int64(i + 1)
+		butt.doc_number = i + 1
+		doc_list.add_child(butt)
 
 func createDrawableArea(location: Vector2i, dimentions: Vector2i) -> void:
 	var canv = canvas.duplicate()
@@ -82,6 +95,8 @@ func _input(event: InputEvent) -> void:
 			cell_at_mouse.modulate = Color(0, 0, 0)
 
 func getCellAtMouse(mouse_pos: Vector2) -> TextureButton:
+	if not canvases:
+		return null
 	for canv in canvases:
 		var canvas_buttons = canv.get_children()
 		for i in canvas_buttons:
