@@ -51,7 +51,7 @@ func speedDown() -> void:
 	
 func lose() -> void:
 	print("lose")
-	#TODO		
+	#TODO
 	
 func _ready() -> void:
 	pass

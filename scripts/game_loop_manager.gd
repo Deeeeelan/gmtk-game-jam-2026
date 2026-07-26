@@ -4,7 +4,7 @@ extends Node
 
 const APP = preload("res://assets/nodes/app.tscn")
 
-const MAX_GAMES: int = 1
+const MAX_GAMES: int = 4
 
 func start():
 	pass
