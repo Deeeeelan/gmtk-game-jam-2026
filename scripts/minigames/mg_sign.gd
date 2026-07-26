@@ -20,14 +20,16 @@ var doc_info: Dictionary = {
 var filled: Dictionary = {
 	1: true,
 	2: true,
-	3: true
-}
+	3: true}
 
 var is_drawing: bool = false
 var canvas_size = Vector2(2, 2)
 var canvases = []
 
 var doc_count: int = 10
+
+func _ready() -> void:
+	play()
 
 func play() -> void:
 	while doc_count > 0:
@@ -38,7 +40,7 @@ func play() -> void:
 		
 		doc_count -= 1
 		break #debug
-	
+
 func createDrawableArea(location: Vector2i, dimentions: Vector2i) -> void:
 	var canv = canvas.duplicate()
 	add_child(canv)
@@ -79,6 +81,3 @@ func getCellAtMouse(mouse_pos: Vector2) -> TextureButton:
 			if button_pos.x <= mouse_pos.x and button_pos.x + button_size.x >= mouse_pos.x and button_pos.y <= mouse_pos.y and button_pos.y + button_size.y >= mouse_pos.y:
 				return i
 	return null
-
-func _ready() -> void:
-	play()
