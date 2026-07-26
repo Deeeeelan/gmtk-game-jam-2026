@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bm3c1sofck16"]
 
 [ext_resource type="Script" uid="uid://bkyam1b1yxprv" path="res://scripts/minigames/mg_word.gd" id="1_xq22r"]
+[ext_resource type="Texture2D" uid="uid://bm5cogpn3dmk0" path="res://assets/images/minigames/mg_word.png" id="2_fdlv7"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6sj1v"]
 
@@ -25,6 +26,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+texture = ExtResource("2_fdlv7")
+stretch_mode = 5
 
 [node name="Center" type="ColorRect" parent="." unique_id=488042521]
 layout_mode = 1
