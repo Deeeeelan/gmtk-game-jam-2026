@@ -96,8 +96,7 @@ func _input(event: InputEvent) -> void:
 				editedDocs.append(getCanvasAtMouse(event.position))
 			if event.button_index == MOUSE_BUTTON_LEFT and !event.pressed:
 				is_drawing = false
-				for doc in editedDocs:
-					markSigned(doc)
+				markSigned(editedDocs)
 				editedDocs.clear()
 		if event is InputEventMouseMotion and is_drawing:
 			var cell_at_mouse = getCellAtMouse(event.position)
@@ -117,14 +116,15 @@ func getCellAtMouse(mouse_pos: Vector2) -> TextureButton:
 				return i
 	return null
 
-func markSigned(canv: GridContainer) -> void:
-	filled[canvases.find(canv) + 1] = true
-	if filled[1] and filled[2] and filled[3] == true:
-		clearedDocs[current_doc] = true
-		getButtonWithDoc(current_doc).modulate = Color(0.0, 0.4, 0.0, 1.0)
-		if clearedDocs[1] and clearedDocs[2] and clearedDocs[3] == true:
-			can_draw = false
-			game_manager.gameWin()
+func markSigned(canvs: Array) -> void:
+	for canv in canvs:
+		filled[canvases.find(canv) + 1] = true
+		if filled[1] and filled[2] and filled[3] == true:
+			clearedDocs[current_doc] = true
+			getButtonWithDoc(current_doc).modulate = Color(0.0, 0.4, 0.0, 1.0)
+	if clearedDocs[1] and clearedDocs[2] and clearedDocs[3] == true:
+		can_draw = false
+		game_manager.gameWin()
 
 func getButtonWithDoc(doc_num) -> Button:
 	for i in doc_list.get_children():
