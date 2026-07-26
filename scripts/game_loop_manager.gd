@@ -5,7 +5,7 @@ extends Node
 @onready var promotion = %Promotion
 const APP = preload("res://assets/nodes/app.tscn")
 
-const MAX_GAMES: int = 1
+const MAX_GAMES: int = 5
 const RANKS = [
 	"Unpaid Intern",
 	"Senior Intern",
@@ -38,6 +38,8 @@ func start():
 	var tween = get_tree().create_tween()
 	tween.tween_property(fade, "color", Color(0.0, 0.0, 0.0, 0.0), 1.0)
 	tween.play()
+	
+	
 	
 	await tween.finished
 	game_loop()
