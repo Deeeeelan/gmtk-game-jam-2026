@@ -31,7 +31,9 @@ func promote():
 	rank += 1
 	if rank > len(RANKS) - 1:
 		rank = len(RANKS) - 1
-	promotion.get_node("Label").text = "Congrats!\nYou've been promoted to:\n" + RANKS[rank]
+		promotion.get_node("Label").text = "Good work!\nYour performance is exceptional."
+	else:
+		promotion.get_node("Label").text = "Congrats!\nYou've been promoted to:\n" + RANKS[rank]
 	promotion.modulate = Color(0.0, 0.0, 0.0, 0.0)
 	var tween = get_tree().create_tween()
 	tween.tween_property(promotion, "modulate", Color(1.0, 1.0, 1.0, 1.0), 1.0)

@@ -91,7 +91,7 @@ var responses: Array[Dictionary] = [ #TODO: Write responses
 ]
 	
 func _ready():
-	var randid = randi_range(0, 3)
+	var randid = randi_range(0, 6)
 	var email = emails[randid]
 	var reponse = responses[randid]
 	$Subject/Label.text = email.Subject
