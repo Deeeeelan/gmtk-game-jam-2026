@@ -10,10 +10,11 @@ config_version=5
 
 [application]
 
-config/name="gmtk-game-jam-2026"
-run/main_scene="uid://cld3b22up38gt"
+config/name="On The Clock"
+config/description="A looming deadline, a ticking clock."
+run/main_scene="uid://cfce8rl3gvf5u"
 config/features=PackedStringArray("4.7", "GL Compatibility")
-config/icon="res://assets/images/icon.svg"
+config/icon="uid://d350268cmyjtj"
 
 [audio]
 
@@ -28,6 +29,7 @@ GameManager="*uid://dtnxmryvuac7n"
 window/size/viewport_width=800
 window/size/viewport_height=600
 window/stretch/mode="viewport"
+mouse_cursor/custom_image="uid://bqwuj6mv048j2"
 
 [editor_plugins]
 
