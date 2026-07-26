@@ -2,6 +2,8 @@ extends Control
 
 @onready var game_manager: Node = GameManager
 
+var win = false
+
 const TEXTS = [
 	"debug",
 	"Funny text.",]
@@ -16,8 +18,10 @@ func play():
 	$Center/Input.text_changed.connect(func():
 		if $Center/Input.text == cur_text:
 			$Center/Input.add_theme_color_override("font_color", Color(0.0, 0.4, 0.0, 1.0))
-			game_manager.gameWin()
-			print('matched')
+			if not win:
+				win = true
+				game_manager.gameWin()
+				print('matched')
 		else:
 			# Are all current chars correct?
 			if $Center/Input.text != cur_text.substr(0, len($Center/Input.text)):

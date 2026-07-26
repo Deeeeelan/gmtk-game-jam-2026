@@ -4,6 +4,9 @@ extends Node
 
 const APP = preload("res://assets/nodes/app.tscn")
 
+const MAX_GAMES: int = 1
+
+
 func game_loop() -> void:
 	countdown_text.visible = true
 	$"../Countdown".start()
@@ -18,7 +21,7 @@ func game_loop() -> void:
 	)
 	while true:
 		GameManager.curr_time = GameManager.max_time
-		for i in range(4):
+		for i in range(MAX_GAMES):
 			var game_id = randi_range(0, len(GameManager.GAMES) - 1)
 			var game = GameManager.GAMES[game_id]
 			var app = APP.instantiate()
@@ -27,10 +30,16 @@ func game_loop() -> void:
 			app.get_node("List/Title").text = game.name
 			app.get_node("List/MarginContainer/Icon").texture = load(game.icon)
 			%AppList.add_child(app)
-				
+		
+		while GameManager.cur_games < MAX_GAMES: await get_tree().create_timer(0.5).timeout
+		print("NEXT")
+		GameManager.cur_games = 0
 		GameManager.max_time = max(5, floori(GameManager.max_time * .75))
-		break
-
+		
+		for n in %AppList.get_children():
+			n.queue_free()
+		for n in %Windows.get_children():
+			n.queue_free()
 		
 func _ready() -> void:
 	game_loop()

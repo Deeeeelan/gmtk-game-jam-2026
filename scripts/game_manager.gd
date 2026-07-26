@@ -2,6 +2,7 @@ extends Node
 
 var score: int = 0
 var total_games: int = 0
+var cur_games: int = 0
 
 var curr_time: int = 60
 var max_time: int = 60
@@ -37,6 +38,8 @@ func shutdown():
 func gameWin() -> void:
 	print("Game Completed")
 	score += 1
+	total_games += 1
+	cur_games += 1
 
 func speedUp() -> void:
 	speed_mult = min(500, speed_mult + 50)
