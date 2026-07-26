@@ -49,9 +49,9 @@ var responses: Array[Dictionary] = [ #TODO: Write responses
 		"Correct": 2
 	},
 	{
-		3: "Hey Mr. Manager. Sorry, but I am busy.",
-		2: "Of Course!",
-		1: "...",
+		3: "Sorry, but I require overtime to work an extra hour. Or a raise.",
+		2: "Of course, I have extra time on my hands. I will clock in an hour earlier.",
+		1: "No, I'd like to go home on time.",
 		"Correct": 2
 	},
 	{
