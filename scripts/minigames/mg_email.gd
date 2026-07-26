@@ -11,7 +11,7 @@ var emails: Array[Dictionary] = [ #TODO: Write the emails
 	{
 		"Title": "How do I make a good brisket?",
 		"Subject": 'From: Tom "Texas" Coulkem\nSubject: How do I make a good brisket?', 
-		"Body": "My names Tommy Texas and I love my brisket. But when I bought a smoker from y'all it failed to work. When I put some brisket meat into it it came out completely uncooked. I did cut off a long, black, two pronged snake at the back of the smoker and hung it on my doorstep as a trophy. And now when I press the on button nothing happens. Help me, I can't survive without my brisket."
+		"Body": "My name's Tommy Texas and I love my brisket. But when I bought a smoker from y'all it failed to work. When I put some brisket meat into it it came out completely uncooked. I did cut off a long, black, two pronged snake at the back of the smoker and hung it on my doorstep as a trophy. And now when I press the on button nothing happens. Help me, I can't survive without my brisket."
 	},
 	{
 		"Title": "Regarding the meeting on the 25th",
