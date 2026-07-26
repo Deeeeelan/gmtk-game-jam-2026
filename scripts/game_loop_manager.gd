@@ -22,22 +22,35 @@ const RANKS = [
 	"Senior Manager",
 	"CEO",
 ]
+var rank: int = -1
 
 func promote():
-	promotion
+	rank += 1
+	if rank > len(RANKS) - 1:
+		rank = len(RANKS) - 1
+	promotion.get_node("Label").text = "Congrats!\nYou've been promoted to:\n" + RANKS[rank]
 	promotion.modulate = Color(0.0, 0.0, 0.0, 0.0)
 	var tween = get_tree().create_tween()
 	tween.tween_property(promotion, "modulate", Color(1.0, 1.0, 1.0, 1.0), 1.0)
 	tween.play()
 	
 	await tween.finished
+	%SFX.play()
+	var tween2 = get_tree().create_tween()
+	tween2.tween_property(promotion, "modulate", Color(1.0, 1.0, 1.0, 0.0), 1.0)
+	tween2.play()
 	
 
 func start():
+	%BGM.volume_db = -80.0
+	%BGM.play()
 	fade.color = Color(0.0, 0.0, 0.0, 1.0)
 	var tween = get_tree().create_tween()
 	tween.tween_property(fade, "color", Color(0.0, 0.0, 0.0, 0.0), 1.0)
 	tween.play()
+	var tween2 = get_tree().create_tween()
+	tween2.tween_property(%BGM, "volume_db", 0.0, 8.0)
+	tween2.play()
 	
 	await tween.finished
 	game_loop()
@@ -51,7 +64,6 @@ func game_loop() -> void:
 		else:
 			GameManager.curr_time -= 1
 			countdown_text.text = str(GameManager.curr_time)
-		var clock_state: float = float(GameManager.curr_time) / float(GameManager.max_time)
 	)
 	while true:
 		GameManager.curr_time = GameManager.max_time
@@ -69,7 +81,7 @@ func game_loop() -> void:
 		print("NEXT")
 		promote()
 		GameManager.cur_games = 0
-		GameManager.max_time = max(5, floori(GameManager.max_time * .75))
+		GameManager.max_time = max(5, floori(GameManager.max_time * .85))
 		
 		for n in %AppList.get_children():
 			n.queue_free()

@@ -33,7 +33,7 @@ const GAMES = [
 ]
 func shutdown():
 	print("shutdown")
-	pass
+	get_tree().quit()
 
 func gameWin() -> void:
 	print("Game Completed")

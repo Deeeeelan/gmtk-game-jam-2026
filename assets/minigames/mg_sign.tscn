@@ -72,6 +72,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 allow_search = false
 
 [node name="Canvas" type="GridContainer" parent="." unique_id=1295106592]
