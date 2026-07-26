@@ -8,7 +8,7 @@ extends Node
 var lost = false
 const APP = preload("res://assets/nodes/app.tscn")
 
-var max_games: int = 1
+var max_games: int = 3
 const RANKS = [
 	"Unpaid Intern",
 	"Senior Intern",

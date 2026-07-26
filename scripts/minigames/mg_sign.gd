@@ -28,35 +28,42 @@ var filled: Dictionary = {
 	1: true,
 	2: true,
 	3: true}
+var clearedDocs: Dictionary = {
+	1: false,
+	2: false,
+	3: false}
+var editedDocs: Array = []
 
+var can_draw:bool = true
 var is_drawing: bool = false
 var canvas_size = Vector2(2, 2)
 var canvases = []
-
+var current_doc
 var doc_count: int = 3
 
 func _ready() -> void:
+	can_draw = true
 	play()
 	createButtons()
 	switchDoc(1)
 
 func play() -> void:
-	while doc_count > 0:
-		var current_doc = 1#(randi() % 3) + 1
-		
-		doc_count -= 1
-		break #debug
+	pass
 
 func switchDoc(doc_num) -> void:
+	current_doc = doc_num
 	for node in canvases:
 		node.queue_free()
+	editedDocs.clear()
 	canvases.clear()
 	texture_rect.texture = DOCS[doc_num]
+	for i in range(1, 1 + doc_num):
+		filled[i] = false
 	for area in DOC_INFO[doc_num]:
 		createDrawableArea(area["loc"], area["size"])
 
 func createButtons():
-	for i in range(doc_count + 1):
+	for i in range(doc_count):
 		var butt = DOC_BUTTON.instantiate()
 		butt.modulate = Color()
 		butt.text = "Document " + String.num_int64(i + 1)
@@ -79,20 +86,24 @@ func createDrawableArea(location: Vector2i, dimentions: Vector2i) -> void:
 		canv.add_child(cell)
 
 func _input(event: InputEvent) -> void:
-	if event is InputEventMouseButton:
-		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
-			is_drawing = true
-		var cell_at_mouse = getCellAtMouse(event.position)
-		if cell_at_mouse:
-			cell_at_mouse.modulate = Color(0, 0, 0)
-		if event.button_index == MOUSE_BUTTON_LEFT and !event.pressed:
-			is_drawing = false
-			
-		
-	if event is InputEventMouseMotion and is_drawing:
-		var cell_at_mouse = getCellAtMouse(event.position)
-		if cell_at_mouse:
-			cell_at_mouse.modulate = Color(0, 0, 0)
+	if can_draw:
+		if event is InputEventMouseButton:
+			if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+				is_drawing = true
+			var cell_at_mouse = getCellAtMouse(event.position)
+			if cell_at_mouse:
+				cell_at_mouse.modulate = Color(0, 0, 0)
+				editedDocs.append(getCanvasAtMouse(event.position))
+			if event.button_index == MOUSE_BUTTON_LEFT and !event.pressed:
+				is_drawing = false
+				for doc in editedDocs:
+					markSigned(doc)
+				editedDocs.clear()
+		if event is InputEventMouseMotion and is_drawing:
+			var cell_at_mouse = getCellAtMouse(event.position)
+			if cell_at_mouse:
+				cell_at_mouse.modulate = Color(0, 0, 0)
+				editedDocs.append(getCanvasAtMouse(event.position))
 
 func getCellAtMouse(mouse_pos: Vector2) -> TextureButton:
 	if not canvases:
@@ -104,4 +115,31 @@ func getCellAtMouse(mouse_pos: Vector2) -> TextureButton:
 			var button_size = i.custom_minimum_size
 			if button_pos.x <= mouse_pos.x and button_pos.x + button_size.x >= mouse_pos.x and button_pos.y <= mouse_pos.y and button_pos.y + button_size.y >= mouse_pos.y:
 				return i
+	return null
+
+func markSigned(canv: GridContainer) -> void:
+	filled[canvases.find(canv) + 1] = true
+	if filled[1] and filled[2] and filled[3] == true:
+		clearedDocs[current_doc] = true
+		getButtonWithDoc(current_doc).modulate = Color(0.0, 0.4, 0.0, 1.0)
+		if clearedDocs[1] and clearedDocs[2] and clearedDocs[3] == true:
+			can_draw = false
+			game_manager.gameWin()
+
+func getButtonWithDoc(doc_num) -> Button:
+	for i in doc_list.get_children():
+		if i.doc_number == doc_num:
+			return i
+	return null
+
+func getCanvasAtMouse(mouse_pos: Vector2) -> GridContainer:
+	if not canvases:
+		return null
+	for canv in canvases:
+		var canvas_buttons = canv.get_children()
+		for i in canvas_buttons:
+			var button_pos = i.global_position
+			var button_size = i.custom_minimum_size
+			if button_pos.x <= mouse_pos.x and button_pos.x + button_size.x >= mouse_pos.x and button_pos.y <= mouse_pos.y and button_pos.y + button_size.y >= mouse_pos.y:
+				return canv
 	return null
