@@ -13,6 +13,8 @@ func game_loop() -> void:
 		else:
 			GameManager.curr_time -= 1
 			countdown_text.text = "Deadline:\n" + str(GameManager.curr_time)
+		var clock_state: float = float(GameManager.curr_time) / float(GameManager.max_time)
+		%Clock.text = "9:00" + ("am" if clock_state < 0.5 else "pm") #TODO
 	)
 	while true:
 		GameManager.curr_time = GameManager.max_time

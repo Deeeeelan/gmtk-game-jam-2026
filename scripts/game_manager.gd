@@ -30,6 +30,9 @@ const GAMES = [
 		"icon": "res://assets/images/app_icons/email.png",
 	},
 ]
+func shutdown():
+	print("shutdown")
+	pass
 
 func gameWin() -> void:
 	print("Game Completed")

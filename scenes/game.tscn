@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://cfce8rl3gvf5u"]
 
+[ext_resource type="Script" uid="uid://bfxpqrqu01cdd" path="res://scenes/shutdown.gd" id="2_p57ef"]
 [ext_resource type="Texture2D" uid="uid://x8s3v33dnavy" path="res://assets/images/desktop/taskbar.png" id="2_u5sy4"]
 [ext_resource type="Texture2D" uid="uid://bmf64qaw1ftmg" path="res://assets/images/icon.svg" id="2_yqjtg"]
 [ext_resource type="PackedScene" uid="uid://dxs7j6fe6vjl8" path="res://assets/nodes/minigame_window.tscn" id="5_p57ef"]
@@ -12,8 +13,6 @@ font_color = Color(0.75686276, 0, 0, 1)
 outline_color = Color(0, 0, 0, 1)
 
 [node name="Game" type="Node" unique_id=101121047]
-
-[node name="Node2D" type="Node2D" parent="." unique_id=1775230814]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=749428670]
 
@@ -32,6 +31,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 color = Color(0, 0.5019608, 0.5058824, 1)
 
 [node name="TEMPTaskbar" type="TextureRect" parent="CanvasLayer/Desktop" unique_id=1207374543]
@@ -43,7 +43,32 @@ anchor_bottom = 1.0
 offset_top = -56.0
 grow_horizontal = 2
 grow_vertical = 0
+mouse_filter = 2
 texture = ExtResource("2_u5sy4")
+
+[node name="Clock" type="Label" parent="CanvasLayer/Desktop/TEMPTaskbar" unique_id=1621518210]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.86100006
+anchor_top = 0.286
+anchor_right = 0.975
+anchor_bottom = 0.72200006
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 18
+text = "9:00am"
+vertical_alignment = 1
+clip_text = true
+
+[node name="Shutdown" type="Button" parent="CanvasLayer/Desktop/TEMPTaskbar" unique_id=1259332346]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 11.0
+offset_right = 56.0
+offset_bottom = 44.0
+mouse_filter = 1
+flat = true
+script = ExtResource("2_p57ef")
 
 [node name="Transition" type="Control" parent="CanvasLayer/Desktop" unique_id=843589496]
 layout_mode = 1
