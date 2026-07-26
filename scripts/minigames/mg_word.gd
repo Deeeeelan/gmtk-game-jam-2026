@@ -5,8 +5,13 @@ extends Control
 var win = false
 
 const TEXTS = [
-	"debug",
-	"Funny text.",]
+	"The quick brown fox jumped over the nasty dog. While that is true, I don't really like dogs. Personally I'm a cat person.",
+	"After one o' clock, I clock out. But I hate clocking out so I use my magic stopwatch to stop time and work eternally.",
+	"I think everyone should study me. My button fastening business is bound to succeed, giving us money that can stack to SATURN!",
+	"Work emails are lame. Workings lame. Why do I work? I don't know I'm an unpaid intern.",
+	"Lorem Ipsum...",
+	"Sometime I just feel like working. There's just this strange urge, but it's probably just money pulling me in."
+]
 
 func _ready() -> void:
 	play()
