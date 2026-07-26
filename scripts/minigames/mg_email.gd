@@ -2,6 +2,9 @@ extends Control
 
 @onready var game_manager: Node = GameManager
 
+var win = false
+var cooldown = false
+
 const EMAIL_BUTTON = preload("res://assets/nodes/email_button.tscn")
 
 var emails: Array[Dictionary] = [ #TODO: Write the emails
@@ -40,16 +43,16 @@ var responses: Array[Dictionary] = [ #TODO: Write responses
 		"Correct": 1
 	},
 	{
-		1: "Hi Maple! I love your voice, that's why I call you in!",
-		2: "Hi Maple. I have no respect for your time whatsoever so I just call you into office because it's funny when you get mad.",
+		2: "Hi Maple! I love your voice, that's why I call you in!",
+		1: "Hi Maple. I have no respect for your time whatsoever so I just call you into office because it's funny when you get mad.",
 		3: "Hi Maple, I just like making meetings for fun.",
-		"Correct": 1
+		"Correct": 2
 	},
 		{
-		1: "Hey Denson. I agree that staples are a crucial element in a successful office. I will create a new order ASAP.",
+		3: "Hey Denson. I agree that staples are a crucial element in a successful office. I will create a new order ASAP.",
 		2: "Hey Denson. I agree staples are very useful for us because we can like staple someone's shirt to itself while they sleep.",
-		3: "Hello Denson, I think we can all agree that staples are tasty.",
-		"Correct": 1
+		1: "Hello Denson, I think we can all agree that staples are tasty.",
+		"Correct": 3
 	},
 	{
 		1: "Hey Garret, Despite your position, I think you are very beneficial for the company and we wish to see you succeed.",
@@ -65,9 +68,24 @@ func _ready():
 	$Subject/Label.text = email.Subject
 	$Body/Label.text = email.Body
 	for i in range(1, 4):
-		var but = EMAIL_BUTTON.instantiate()
+		var but : Button = EMAIL_BUTTON.instantiate()
 		but.text = reponse[i]
 		$Left/ItemList/Page/VBoxContainer.add_child(but)
+		but.pressed.connect(func():
+			if not cooldown:
+				cooldown = true
+				if i == reponse.Correct:
+					if not win:
+						win = true
+						GameManager.gameWin()
+					but.add_theme_color_override("font_color", Color(0.0, 0.78, 0.0, 1.0))
+				else:
+					get_tree().get_first_node_in_group("wrongsfx").play()
+					but.add_theme_color_override("font_color", Color(0.569, 0.0, 0.0, 1.0))
+				await get_tree().create_timer(4).timeout
+				cooldown = false
+				
+		)
 		
 	
 	

@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://d350268cmyjtj" path="res://assets/images/slide_content/speed_up.png" id="5_u5sy4"]
 [ext_resource type="AudioStream" uid="uid://cf1br5pxi1m8p" path="res://assets/audio/speed up.ogg" id="6_gee14"]
 [ext_resource type="AudioStream" uid="uid://dfit6byv21t5o" path="res://assets/audio/minigame lose.ogg" id="7_0tnpc"]
+[ext_resource type="AudioStream" uid="uid://bdhl033ppnnbw" path="res://assets/audio/startup.ogg" id="7_vtaks"]
 [ext_resource type="Script" uid="uid://d05bssflabn18" path="res://scripts/game_loop_manager.gd" id="8_0tnpc"]
 [ext_resource type="AudioStream" uid="uid://m14mmu5rmdq" path="res://assets/audio/music_track.mp3" id="9_0tnpc"]
 
@@ -183,6 +184,7 @@ horizontal_alignment = 1
 
 [node name="Fade" type="ColorRect" parent="CanvasLayer/Desktop" unique_id=1183143359]
 unique_name_in_owner = true
+z_index = 1
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -195,6 +197,7 @@ color = Color(0, 0, 0, 0)
 [node name="Promotion" type="ColorRect" parent="CanvasLayer/Desktop" unique_id=1520647729]
 unique_name_in_owner = true
 modulate = Color(1, 1, 1, 0)
+z_index = 1
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -238,6 +241,7 @@ stretch_mode = 4
 [node name="Fired" type="ColorRect" parent="CanvasLayer/Desktop" unique_id=261656770]
 unique_name_in_owner = true
 modulate = Color(1, 1, 1, 0)
+z_index = 1
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -267,6 +271,16 @@ stream = ExtResource("6_gee14")
 bus = &"SFX"
 
 [node name="SFX_shutdown" type="AudioStreamPlayer" parent="." unique_id=1025988510]
+unique_name_in_owner = true
+stream = ExtResource("7_0tnpc")
+bus = &"SFX"
+
+[node name="SFX_start" type="AudioStreamPlayer" parent="." unique_id=344334024]
+unique_name_in_owner = true
+stream = ExtResource("7_vtaks")
+bus = &"SFX"
+
+[node name="SFX_wrong" type="AudioStreamPlayer" parent="." unique_id=864843585 groups=["wrongsfx"]]
 unique_name_in_owner = true
 stream = ExtResource("7_0tnpc")
 bus = &"SFX"
