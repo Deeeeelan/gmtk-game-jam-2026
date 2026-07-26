@@ -1,22 +1,24 @@
 [gd_scene format=3 uid="uid://cfce8rl3gvf5u"]
 
-[ext_resource type="Script" uid="uid://dtnxmryvuac7n" path="res://scripts/game_manager.gd" id="1_yqjtg"]
 [ext_resource type="Texture2D" uid="uid://x8s3v33dnavy" path="res://assets/images/desktop/taskbar.png" id="2_u5sy4"]
 [ext_resource type="Texture2D" uid="uid://bmf64qaw1ftmg" path="res://assets/images/icon.svg" id="2_yqjtg"]
-[ext_resource type="Texture2D" uid="uid://cmn27ifrauvil" path="res://assets/images/app_icons/word.png" id="4_gee14"]
+[ext_resource type="PackedScene" uid="uid://d1wfssblvtuy1" path="res://assets/nodes/app.tscn" id="4_gee14"]
 [ext_resource type="PackedScene" uid="uid://dxs7j6fe6vjl8" path="res://assets/nodes/minigame_window.tscn" id="5_p57ef"]
 [ext_resource type="Script" uid="uid://l6w2cbmm7hic" path="res://scripts/minigames/open_minigame.gd" id="5_u5sy4"]
 [ext_resource type="Texture2D" uid="uid://dbdojfxn6xli6" path="res://assets/images/app_icons/email.png" id="6_0tnpc"]
 [ext_resource type="Texture2D" uid="uid://cd14ep3yyewlb" path="res://assets/images/app_icons/sign_document.png" id="6_vtaks"]
+[ext_resource type="Texture2D" uid="uid://b4i3o5ydoxatb" path="res://assets/images/os_window/9slice_window.png" id="7_u5sy4"]
 [ext_resource type="PackedScene" uid="uid://cjemsgciw5b7u" path="res://assets/minigames/mg_sign.tscn" id="8_gee14"]
+[ext_resource type="AudioStream" uid="uid://m14mmu5rmdq" path="res://assets/audio/music_track.mp3" id="9_0tnpc"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_6sj1v"]
+font_size = 64
+font_color = Color(0.75686276, 0, 0, 1)
+outline_color = Color(0, 0, 0, 1)
 
 [node name="Game" type="Node" unique_id=101121047]
 
 [node name="Node2D" type="Node2D" parent="." unique_id=1775230814]
-
-[node name="GameManager" type="Node" parent="." unique_id=729286049]
-unique_name_in_owner = true
-script = ExtResource("1_yqjtg")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=749428670]
 
@@ -127,91 +129,8 @@ theme_override_constants/margin_top = 8
 [node name="AppList" type="VBoxContainer" parent="CanvasLayer/Desktop/DesktopApps/MarginContainer" unique_id=1290505825]
 layout_mode = 2
 
-[node name="WordApp" type="MarginContainer" parent="CanvasLayer/Desktop/DesktopApps/MarginContainer/AppList" unique_id=620243146]
+[node name="App" parent="CanvasLayer/Desktop/DesktopApps/MarginContainer/AppList" unique_id=441199121 instance=ExtResource("4_gee14")]
 layout_mode = 2
-theme_override_constants/margin_left = 8
-theme_override_constants/margin_top = 8
-theme_override_constants/margin_right = 8
-theme_override_constants/margin_bottom = 8
-
-[node name="List" type="VBoxContainer" parent="CanvasLayer/Desktop/DesktopApps/MarginContainer/AppList/WordApp" unique_id=90371095]
-layout_mode = 2
-mouse_filter = 2
-
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Desktop/DesktopApps/MarginContainer/AppList/WordApp/List" unique_id=514187680]
-layout_mode = 2
-mouse_filter = 2
-theme_override_constants/margin_left = 8
-theme_override_constants/margin_top = 8
-theme_override_constants/margin_right = 8
-theme_override_constants/margin_bottom = 8
-
-[node name="Icon" type="TextureRect" parent="CanvasLayer/Desktop/DesktopApps/MarginContainer/AppList/WordApp/List/MarginContainer" unique_id=1192499370]
-layout_mode = 2
-mouse_filter = 2
-texture = ExtResource("4_gee14")
-stretch_mode = 5
-
-[node name="Title" type="Label" parent="CanvasLayer/Desktop/DesktopApps/MarginContainer/AppList/WordApp/List" unique_id=50151332]
-custom_minimum_size = Vector2(64, 32)
-custom_maximum_size = Vector2(128, 128)
-layout_mode = 2
-text = "Write some Docs"
-horizontal_alignment = 1
-autowrap_mode = 2
-
-[node name="Button" type="Button" parent="CanvasLayer/Desktop/DesktopApps/MarginContainer/AppList/WordApp" unique_id=1747971174]
-z_index = 1
-layout_mode = 2
-mouse_filter = 1
-mouse_default_cursor_shape = 2
-flat = true
-script = ExtResource("5_u5sy4")
-game_path = "res://assets/minigames/mg_word.tscn"
-game_name = "Word"
-
-[node name="SignApp" type="MarginContainer" parent="CanvasLayer/Desktop/DesktopApps/MarginContainer/AppList" unique_id=193374164]
-layout_mode = 2
-theme_override_constants/margin_left = 8
-theme_override_constants/margin_top = 8
-theme_override_constants/margin_right = 8
-theme_override_constants/margin_bottom = 8
-
-[node name="List" type="VBoxContainer" parent="CanvasLayer/Desktop/DesktopApps/MarginContainer/AppList/SignApp" unique_id=496063399]
-layout_mode = 2
-mouse_filter = 2
-
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Desktop/DesktopApps/MarginContainer/AppList/SignApp/List" unique_id=1771429853]
-layout_mode = 2
-mouse_filter = 2
-theme_override_constants/margin_left = 8
-theme_override_constants/margin_top = 8
-theme_override_constants/margin_right = 8
-theme_override_constants/margin_bottom = 8
-
-[node name="Icon" type="TextureRect" parent="CanvasLayer/Desktop/DesktopApps/MarginContainer/AppList/SignApp/List/MarginContainer" unique_id=1241914779]
-layout_mode = 2
-mouse_filter = 2
-texture = ExtResource("6_vtaks")
-stretch_mode = 5
-
-[node name="Title" type="Label" parent="CanvasLayer/Desktop/DesktopApps/MarginContainer/AppList/SignApp/List" unique_id=581200332]
-custom_minimum_size = Vector2(64, 32)
-custom_maximum_size = Vector2(128, 128)
-layout_mode = 2
-text = "Sign Docs"
-horizontal_alignment = 1
-autowrap_mode = 2
-
-[node name="Button" type="Button" parent="CanvasLayer/Desktop/DesktopApps/MarginContainer/AppList/SignApp" unique_id=443846468]
-z_index = 1
-layout_mode = 2
-mouse_filter = 1
-mouse_default_cursor_shape = 2
-flat = true
-script = ExtResource("5_u5sy4")
-game_path = "res://assets/minigames/mg_sign.tscn"
-game_name = "Sign"
 
 [node name="EmailApp" type="MarginContainer" parent="CanvasLayer/Desktop/DesktopApps/MarginContainer/AppList" unique_id=1728525797]
 layout_mode = 2
@@ -278,8 +197,27 @@ offset_bottom = 419.0
 layout_mode = 1
 anchors_preset = -1
 
+[node name="Countdown" type="Label" parent="CanvasLayer/Desktop" unique_id=466670642]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -116.0
+offset_right = 116.0
+offset_bottom = 125.0
+grow_horizontal = 2
+text = "Deadline:
+60"
+label_settings = SubResource("LabelSettings_6sj1v")
+horizontal_alignment = 1
+
 [node name="SFX" type="AudioStreamPlayer" parent="." unique_id=490466500]
 
 [node name="BGM" type="AudioStreamPlayer" parent="." unique_id=281626738]
+stream = ExtResource("9_0tnpc")
+
+[node name="Countdown" type="Timer" parent="." unique_id=337218914]
 
 [editable path="CanvasLayer/Desktop/Windows/MinigameWindow2"]
