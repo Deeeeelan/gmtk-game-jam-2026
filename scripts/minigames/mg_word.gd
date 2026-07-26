@@ -15,6 +15,9 @@ const TEXTS = [
 	"Being good at my job rewards me with doing more jobs! This is amazing.",
 	"Considering my efforts at this company, I feel like I deserve a raise. Actually this draft sucks.",
 	"Everytime I look at the clock, it goes backwards. Am I going insane? Should I request time off?",
+	"Lorem Ipsum... salt?",
+	"Sometimes, I just feel like working. There's just this strange urge, but it's probably just the money drawing me in.",
+	"There's a distinct lack of Gravity and Grace here. We're all working With Reckless Abandon."
 ]
 
 func _ready() -> void:
