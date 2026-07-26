@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cfce8rl3gvf5u"]
 
-[ext_resource type="Script" uid="uid://bfxpqrqu01cdd" path="res://scenes/shutdown.gd" id="2_p57ef"]
+[ext_resource type="Script" uid="uid://bfxpqrqu01cdd" path="res://scripts/shutdown.gd" id="2_p57ef"]
 [ext_resource type="Texture2D" uid="uid://x8s3v33dnavy" path="res://assets/images/desktop/taskbar.png" id="2_u5sy4"]
 [ext_resource type="Texture2D" uid="uid://bmf64qaw1ftmg" path="res://assets/images/icon.svg" id="2_yqjtg"]
 [ext_resource type="Texture2D" uid="uid://d350268cmyjtj" path="res://assets/images/slide_content/speed_up.png" id="5_u5sy4"]
@@ -234,6 +234,32 @@ grow_vertical = 2
 rotation = -1.5707964
 texture = ExtResource("5_u5sy4")
 stretch_mode = 4
+
+[node name="Fired" type="ColorRect" parent="CanvasLayer/Desktop" unique_id=261656770]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="CanvasLayer/Desktop/Fired" unique_id=1733065757]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 32
+text = "Congrats!
+You've been promoted to:
+Senior Janitor"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="SFX" type="AudioStreamPlayer" parent="." unique_id=490466500]
 unique_name_in_owner = true
