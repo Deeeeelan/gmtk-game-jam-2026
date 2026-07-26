@@ -6,7 +6,7 @@ var emails: Array[Dictionary] = [ #TODO: Write the emails
 	{
 		"Title": "Q4 Budget Updates", 
 		"Subject": "From: Steven from Accounting\nSubject: Q4 Budget Updates", 
-		"Body": ""
+		"Body": "lorum supin"
 	},
 	{
 		"Title": "lorum ipsum salt",

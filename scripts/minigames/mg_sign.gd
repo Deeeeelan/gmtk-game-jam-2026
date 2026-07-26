@@ -2,8 +2,9 @@ extends Control
 
 @onready var game_manager: Node = GameManager
 @onready var canvas: GridContainer = $Canvas
+@onready var item_list: ItemList = $Left/Page/ItemList
 
-var doc_info: Dictionary = {
+const DOC_INFO: Dictionary = {
 	1: [{
 			"loc": Vector2(385, 370), "size": Vector2(50, 14)}],
 	2: [{
@@ -16,6 +17,10 @@ var doc_info: Dictionary = {
 			"loc": Vector2(), "size": Vector2()},
 		{
 			"loc": Vector2(), "size": Vector2()}]}
+const DOCS = {
+	1: preload("res://assets/images/minigames/mg_draw_1.png"),
+	2: preload("res://assets/images/minigames/mg_draw_2.png"),
+	3: preload("res://assets/images/minigames/mg_draw_3.png")}
 
 var filled: Dictionary = {
 	1: true,
@@ -26,7 +31,7 @@ var is_drawing: bool = false
 var canvas_size = Vector2(2, 2)
 var canvases = []
 
-var doc_count: int = 10
+var doc_count: int = 3
 
 func _ready() -> void:
 	play()
@@ -34,12 +39,16 @@ func _ready() -> void:
 func play() -> void:
 	while doc_count > 0:
 		var current_doc = 1#(randi() % 3) + 1
-		for i in doc_info[current_doc]:
+		for i in DOC_INFO[current_doc]:
 			createDrawableArea(i["loc"], i["size"])
 		
 		
 		doc_count -= 1
 		break #debug
+
+func createButtons():
+	for i in range(doc_count):
+		item_list.add_item("Document " + String.num_int64(i + 1))
 
 func createDrawableArea(location: Vector2i, dimentions: Vector2i) -> void:
 	var canv = canvas.duplicate()

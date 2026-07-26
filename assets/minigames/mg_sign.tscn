@@ -2,7 +2,9 @@
 
 [ext_resource type="Script" uid="uid://txnw3l5tlm2s" path="res://scripts/minigames/mg_sign.gd" id="1_r3yog"]
 [ext_resource type="Texture2D" uid="uid://b4i3o5ydoxatb" path="res://assets/images/os_window/9slice_window.png" id="2_8dnaa"]
-[ext_resource type="Texture2D" uid="uid://b7yy467f1h8f3" path="res://assets/images/minigames/mg_draw_1.png" id="2_dmj4g"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_dmj4g"]
+load_path = "res://.godot/imported/mg_draw_1.png-ad5251e9df4a1096b94f0297b703886b.ctex"
 
 [node name="MG_Sign" type="Control" unique_id=1222474499]
 layout_mode = 3
@@ -23,25 +25,6 @@ anchor_bottom = 1.0
 offset_right = -4.0
 offset_bottom = -4.0
 color = Color(0.5802277, 0.58022773, 0.58022773, 1)
-
-[node name="TextureRect" type="TextureRect" parent="Page" unique_id=595362165]
-custom_minimum_size = Vector2(170, 220)
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.63
-anchor_top = 0.5
-anchor_right = 0.73
-anchor_bottom = 0.5
-offset_left = -225.5
-offset_top = -193.0
-offset_right = -55.5
-offset_bottom = 27.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("2_dmj4g")
-stretch_mode = 4
-metadata/_edit_use_anchors_ = true
 
 [node name="Top" type="NinePatchRect" parent="." unique_id=2049101252]
 layout_mode = 1
@@ -70,7 +53,7 @@ patch_margin_top = 5
 patch_margin_right = 5
 patch_margin_bottom = 5
 
-[node name="Page" type="ColorRect" parent="Left" unique_id=1921276407]
+[node name="Page" type="ColorRect" parent="Left" unique_id=1628995022]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
@@ -80,23 +63,16 @@ offset_top = 8.0
 offset_right = -8.0
 offset_bottom = -8.0
 
-[node name="Label" type="Label" parent="Left/Page" unique_id=807887052]
-custom_minimum_size = Vector2(1, 0)
+[node name="ItemList" type="ItemList" parent="Left/Page" unique_id=1118640733]
+self_modulate = Color(1, 1, 1, 0)
+top_level = true
 layout_mode = 1
-anchors_preset = -1
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 4.0
-offset_top = 4.0
-offset_right = -4.0
-offset_bottom = -4.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Work Docs
-Work Docs
-Work Docs"
-autowrap_mode = 2
+allow_search = false
 
 [node name="Canvas" type="GridContainer" parent="." unique_id=1295106592]
 layout_mode = 0
@@ -104,3 +80,22 @@ offset_right = 103.0
 offset_bottom = 35.0
 theme_override_constants/h_separation = 0
 theme_override_constants/v_separation = 0
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=595362165]
+custom_minimum_size = Vector2(170, 220)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -60.0
+offset_top = -150.0
+offset_right = 110.0
+offset_bottom = 70.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.5, 1.5)
+texture = SubResource("CompressedTexture2D_dmj4g")
+expand_mode = 3
+stretch_mode = 5
