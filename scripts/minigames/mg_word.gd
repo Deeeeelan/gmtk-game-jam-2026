@@ -10,7 +10,8 @@ const TEXTS = [
 	"I think everyone should study me. My button fastening business is bound to succeed, giving us money that can stack to SATURN!",
 	"Work emails are lame. Working's lame. Why do I work? I don't know. I'm just an unpaid intern.",
 	"Lorem Ipsum... salt?",
-	"Sometimes, I just feel like working. There's just this strange urge, but it's probably just the money drawing me in."
+	"Sometimes, I just feel like working. There's just this strange urge, but it's probably just the money drawing me in.",
+	"There's a distinct lack of Gravity and Grace here. We're all working With Reckless Abandon."
 ]
 
 func _ready() -> void:
