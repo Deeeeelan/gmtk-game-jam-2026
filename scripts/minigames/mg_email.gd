@@ -24,8 +24,8 @@ var emails: Array[Dictionary] = [ #TODO: Write the emails
 		"Body": "I need you to work an extra hour for the next two weeks. Will not be considered as overtime."
 	},
 	{
-		"Title": "Regarding the remaining supplies in the closet",
-		"Subject": "From: Johnny Denson\nSubject: Regarding the remaining supplies in the closet", 
+		"Title": "Regarding the remaining supplies in the office",
+		"Subject": "From: Johnny Denson\nSubject: Regarding the remaining supplies in the office", 
 		"Body": "We have 10 staples left. How are we still alive as a company. Please buy more."
 	},
 	{
