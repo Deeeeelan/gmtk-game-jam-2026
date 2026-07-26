@@ -13,11 +13,11 @@ const DOC_INFO: Dictionary = {
 		{
 			"loc": Vector2(450, 390), "size": Vector2(45, 13)}],
 	3: [{
-			"loc": Vector2(), "size": Vector2(45, 13)},
+			"loc": Vector2(450, 249), "size": Vector2(45, 11)},
 		{
-			"loc": Vector2(), "size": Vector2(45, 13)},
+			"loc": Vector2(450, 375), "size": Vector2(45, 11)},
 		{
-			"loc": Vector2(), "size": Vector2(45, 13)}]}
+			"loc": Vector2(578, 375), "size": Vector2(45, 11)}]}
 const DOCS = {
 	1: preload("res://assets/images/minigames/mg_draw_1.png"),
 	2: preload("res://assets/images/minigames/mg_draw_2.png"),
