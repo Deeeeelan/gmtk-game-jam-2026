@@ -5,7 +5,7 @@ extends Node
 @onready var promotion = %Promotion
 const APP = preload("res://assets/nodes/app.tscn")
 
-const MAX_GAMES: int = 5
+var max_games: int = 1
 const RANKS = [
 	"Unpaid Intern",
 	"Senior Intern",
@@ -69,7 +69,7 @@ func game_loop() -> void:
 	)
 	while true:
 		GameManager.curr_time = GameManager.max_time
-		for i in range(MAX_GAMES):
+		for i in range(max_games):
 			var game_id = randi_range(0, len(GameManager.GAMES) - 1)
 			var game = GameManager.GAMES[game_id]
 			var app = APP.instantiate()
@@ -79,9 +79,11 @@ func game_loop() -> void:
 			app.get_node("List/MarginContainer/Icon").texture = load(game.icon)
 			%AppList.add_child(app)
 		
-		while GameManager.cur_games < MAX_GAMES: await get_tree().create_timer(0.5).timeout
+		while GameManager.cur_games < max_games: await get_tree().create_timer(0.5).timeout
 		print("NEXT")
 		promote()
+		if GameManager.total_games % 3 == 0 and GameManager.total_games >= 3 and max_games < 4:
+			max_games += 1
 		GameManager.cur_games = 0
 		GameManager.max_time = max(5, floori(GameManager.max_time * .85))
 		
