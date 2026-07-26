@@ -4,6 +4,8 @@
 [ext_resource type="Script" uid="uid://l6w2cbmm7hic" path="res://scripts/minigames/open_minigame.gd" id="2_srcxb"]
 
 [node name="App" type="MarginContainer" unique_id=441199121]
+offset_right = 103.0
+offset_bottom = 132.0
 theme_override_constants/margin_left = 8
 theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8

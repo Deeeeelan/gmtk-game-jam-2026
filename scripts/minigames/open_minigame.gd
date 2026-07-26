@@ -5,7 +5,6 @@ extends Button
 
 var generated = false
 var wind: Control
-
 const MINIGAME_WINDOW = preload("res://assets/nodes/minigame_window.tscn")
 
 func _pressed() -> void:
@@ -14,7 +13,7 @@ func _pressed() -> void:
 		var win := MINIGAME_WINDOW.instantiate()
 		win.title = game_name
 		win.initialize(load(game_path).instantiate())
-		%Windows.add_child(win)
+		get_tree().get_first_node_in_group("windows").add_child(win)
 		wind = win
 	else:
 		wind.visible = true

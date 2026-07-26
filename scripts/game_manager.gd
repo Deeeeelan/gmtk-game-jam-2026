@@ -17,10 +17,17 @@ const GAMES = [
 	{
 		"path": "res://assets/minigames/mg_word.tscn",
 		"name": "Word",
+		"icon": "res://assets/images/app_icons/word.png",
 	},
 	{
 		"path": "res://assets/minigames/mg_sign.tscn",
 		"name": "Sign",
+		"icon": "res://assets/images/app_icons/sign_document.png",
+	},
+	{
+		"path": "res://assets/minigames/mg_email.tscn",
+		"name": "Email",
+		"icon": "res://assets/images/app_icons/email.png",
 	},
 ]
 
@@ -38,10 +45,7 @@ func speedDown() -> void:
 	
 func lose() -> void:
 	print("lose")
-	#TODO
-
-ime = max(5, floori(max_time * .75))
-		
+	#TODO		
 	
 func _ready() -> void:
 	pass

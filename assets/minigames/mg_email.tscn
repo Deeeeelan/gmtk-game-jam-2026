@@ -72,9 +72,12 @@ patch_margin_bottom = 5
 
 [node name="ItemList" type="ItemList" parent="Left" unique_id=623933134]
 self_modulate = Color(1, 1, 1, 0)
-layout_mode = 0
-offset_right = 200.0
-offset_bottom = 540.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 allow_search = false
 
 [node name="Page" type="ColorRect" parent="Left/ItemList" unique_id=1216606761]

@@ -22,8 +22,12 @@ func initialize(cn: Control):
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
-		if event.button_index == MOUSE_BUTTON_LEFT and not event.pressed:
-			dragging = false
+		if event.button_index == MOUSE_BUTTON_LEFT:
+			if not event.pressed:
+				dragging = false
+			elif not get_global_rect().has_point(get_global_mouse_position()):
+				z_index = 0
+				
 
 func _process(delta: float) -> void:
 	if dragging and get_viewport().get_visible_rect().has_point(get_viewport().get_mouse_position()):
@@ -34,6 +38,7 @@ func _ready() -> void:
 		if event is InputEventMouseButton:
 			if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 				dragging = true
+				z_index = 1
 				offset_drag = get_viewport().get_mouse_position() - position
 	)
 	
