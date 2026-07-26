@@ -5,12 +5,12 @@ extends Control
 var win = false
 
 const TEXTS = [
-	"The quick brown fox jumped over the nasty dog. While that is true, I don't really like dogs. Personally I'm a cat person.",
-	"After one o' clock, I clock out. But I hate clocking out so I use my magic stopwatch to stop time and work eternally.",
+	"The quick brown fox jumped over the nasty dog. While that's true, I don't really like dogs. Personally, I'm a cat person.",
+	"After one o' clock, I clock out. But I hate clocking out, so I use my magic stopwatch to stop time and work for eternity.",
 	"I think everyone should study me. My button fastening business is bound to succeed, giving us money that can stack to SATURN!",
-	"Work emails are lame. Workings lame. Why do I work? I don't know I'm an unpaid intern.",
-	"Lorem Ipsum...",
-	"Sometime I just feel like working. There's just this strange urge, but it's probably just money pulling me in."
+	"Work emails are lame. Working's lame. Why do I work? I don't know. I'm just an unpaid intern.",
+	"Lorem Ipsum... salt?",
+	"Sometimes, I just feel like working. There's just this strange urge, but it's probably just the money drawing me in."
 ]
 
 func _ready() -> void:
