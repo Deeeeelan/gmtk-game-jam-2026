@@ -8,7 +8,7 @@ extends Node
 var lost = false
 const APP = preload("res://assets/nodes/app.tscn")
 
-var max_games: int = 3
+var max_games: int = 1
 const RANKS = [
 	"Unpaid Intern",
 	"Senior Intern",
@@ -38,6 +38,7 @@ func promote():
 	tween.play()
 	
 	await tween.finished
+	await get_tree().create_timer(2.0).timeout
 	%SFX.play()
 	var tween2 = get_tree().create_tween()
 	tween2.tween_property(promotion, "modulate", Color(1.0, 1.0, 1.0, 0.0), 1.0)
