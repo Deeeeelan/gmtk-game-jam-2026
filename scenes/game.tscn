@@ -8,6 +8,7 @@
 [ext_resource type="AudioStream" uid="uid://dfit6byv21t5o" path="res://assets/audio/minigame lose.ogg" id="7_0tnpc"]
 [ext_resource type="AudioStream" uid="uid://bdhl033ppnnbw" path="res://assets/audio/startup.ogg" id="7_vtaks"]
 [ext_resource type="Script" uid="uid://d05bssflabn18" path="res://scripts/game_loop_manager.gd" id="8_0tnpc"]
+[ext_resource type="AudioStream" uid="uid://bcxa25l2lobky" path="res://assets/audio/minigame win.ogg" id="8_vtaks"]
 [ext_resource type="AudioStream" uid="uid://m14mmu5rmdq" path="res://assets/audio/music_track.mp3" id="9_0tnpc"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_6sj1v"]
@@ -283,6 +284,11 @@ bus = &"SFX"
 [node name="SFX_wrong" type="AudioStreamPlayer" parent="." unique_id=864843585 groups=["wrongsfx"]]
 unique_name_in_owner = true
 stream = ExtResource("7_0tnpc")
+bus = &"SFX"
+
+[node name="SFX_win" type="AudioStreamPlayer" parent="." unique_id=2120522630 groups=["winsfx"]]
+unique_name_in_owner = true
+stream = ExtResource("8_vtaks")
 bus = &"SFX"
 
 [node name="BGM" type="AudioStreamPlayer" parent="." unique_id=281626738]
