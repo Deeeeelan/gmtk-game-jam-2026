@@ -17,7 +17,8 @@ const TEXTS = [
 	"Everytime I look at the clock, it goes backwards. Am I going insane? Should I request time off?",
 	"Lorem Ipsum... salt?",
 	"Sometimes, I just feel like working. There's just this strange urge, but it's probably just the money drawing me in.",
-	"There's a distinct lack of Gravity and Grace here. We're all working With Reckless Abandon."
+	"There's a distinct lack of Gravity and Grace here. We're all working With Reckless Abandon.",
+	"If you're feeling burnt out, don't be feeling like that. Be normal. And get back to work."
 ]
 
 func _ready() -> void:
