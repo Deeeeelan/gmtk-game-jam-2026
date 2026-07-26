@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dxs7j6fe6vjl8" path="res://assets/nodes/minigame_window.tscn" id="5_p57ef"]
 [ext_resource type="Script" uid="uid://l6w2cbmm7hic" path="res://scripts/minigames/open_minigame.gd" id="5_u5sy4"]
 [ext_resource type="Texture2D" uid="uid://b4i3o5ydoxatb" path="res://assets/images/os_window/9slice_window.png" id="7_u5sy4"]
+[ext_resource type="PackedScene" uid="uid://cjemsgciw5b7u" path="res://assets/minigames/mg_sign.tscn" id="8_gee14"]
 
 [node name="Game" type="Node" unique_id=101121047]
 
@@ -222,6 +223,7 @@ grow_vertical = 2
 mouse_filter = 2
 
 [node name="MinigameWindow" parent="CanvasLayer/Desktop/Windows" unique_id=284367759 instance=ExtResource("5_p57ef")]
+visible = false
 layout_mode = 0
 offset_left = 0.0
 offset_top = 0.0
@@ -347,5 +349,11 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_constants/line_spacing = 6
 text = "From: John Doe
 Subject: your mother"
+
+[node name="MinigameWindow2" parent="CanvasLayer/Desktop/Windows" unique_id=154404227 instance=ExtResource("5_p57ef")]
+layout_mode = 0
+
+[node name="MG_Sign" parent="CanvasLayer/Desktop/Windows/MinigameWindow2" unique_id=1222474499 instance=ExtResource("8_gee14")]
+layout_mode = 1
 
 [editable path="CanvasLayer/Desktop/Windows/MinigameWindow"]
