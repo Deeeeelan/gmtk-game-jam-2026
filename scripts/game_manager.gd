@@ -3,21 +3,26 @@ extends Node
 var score: int = 0
 var total_games: int = 0
 
+var curr_time: int = 60
+var max_time: int = 60
+
 var speed_mult: int = 100 # speed mult increasing = decreases deadline time
 
 var currentGame: Node
 var currentWindow: Variant
 
-#func playGame(game: String) -> bool: Depracated
-	#print("playing: ", game)
-	#if Minigames.games.has(game):
-		#print("data: ", Minigames.games[game])
-		#var game_data = Minigames.games[game]
-		#var game_scene = load(game_data.node).instantiate()
-		#
-	#else:
-		#push_warning("no game data!")
-	#return false
+const APP = preload("res://assets/nodes/app.tscn")
+
+const GAMES = [
+	{
+		"path": "res://assets/minigames/mg_word.tscn",
+		"name": "Word",
+	},
+	{
+		"path": "res://assets/minigames/mg_sign.tscn",
+		"name": "Sign",
+	},
+]
 
 func gameWin() -> void:
 	print("Game Completed")
@@ -37,10 +42,19 @@ func lose() -> void:
 
 ## @deprecated: Restructuring the warioware-like format so that multiple games open at once, one main deadline
 func game_loop() -> void:
+	# countdown_text.visible = true
+	$"../Countdown".start()
+	$"../Countdown".timeout.connect(func():
+		curr_time -= 1
+		$"../Countdown".text = "Deadline:\n" + str(curr_time)
+	)
 	while true:
-		#var game_id = randi_range(0, len(Minigames.games))
-		#var game = Minigames.games[game_id]
-		var outcome #= await playGame(game_id)
+		curr_time = max_time
+		var game_id = randi_range(0, len(GAMES))
+		var game = GAMES[game_id]
+		
+		max_time = max(5, floori(max_time * .75))
+		
 	
 func _ready() -> void:
 	pass
