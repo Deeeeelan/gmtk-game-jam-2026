@@ -19,18 +19,12 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_xq22r")
 
-[node name="TextureRect" type="NinePatchRect" parent="." unique_id=699547038]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="TextureRect" type="TextureRect" parent="." unique_id=964442895]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(2, 2)
 texture = ExtResource("2_fdlv7")
-region_rect = Rect2(0, 0, 284, 261)
-patch_margin_left = 233
-patch_margin_right = 199
-axis_stretch_horizontal = 1
 
 [node name="Center" type="ColorRect" parent="." unique_id=488042521]
 layout_mode = 1
