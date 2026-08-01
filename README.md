@@ -9,7 +9,7 @@ Work on the clock at your corporate office job. Time is of the essence as you ru
 ![The 'Word' minigame in gameplay](images/gameplay.png)
 ![The 'Sign' minigame in gameplay](images/gameplay2.png)
 
-This game was created for the 2026 GMTK Game Jam (and Hack Club's jame gam) with a team of 6 people. We used [Godot](https://godotengine.org/) for the engine, [Aseprite](https://www.aseprite.org/) for art, and [LMMS](https://lmms.io/) for music.
+This game was created for the 2026 GMTK Game Jam (and Hack Club's jame gam) with a team of 5 people. We used [Godot](https://godotengine.org/) for the engine, [Aseprite](https://www.aseprite.org/) for art, and [LMMS](https://lmms.io/) for music.
 
 The entire game is modeled after a Windows-95-ish aesthetic and the minigames are similar to common office tools and tasks.
 
