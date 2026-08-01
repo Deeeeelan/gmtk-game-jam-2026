@@ -1,5 +1,7 @@
 # On The Clock
 
+A game where you play as an office worker and try to not get fired.
+
 Created as a submission for GMTK Game Jam 2026.
 
 ### Credits
